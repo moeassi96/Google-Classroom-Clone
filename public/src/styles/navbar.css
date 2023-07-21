@@ -2,14 +2,19 @@ nav {
     height: 64px;
 }
 
-.logo {
+.left-part {
     padding-left: 16px;
 }
 
-.logo span {
+.left-part .classroom {
     color: var(--grey-light);
     font-size: 1.3rem;
     line-height: 1.7em;
+}
+
+.left-part .section {
+    font-size: 12px;
+    color: var(--grey-light);
 }
 
 .right-part {
