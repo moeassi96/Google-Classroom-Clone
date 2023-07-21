@@ -28,3 +28,20 @@ nav {
 .nav-hr {
     border-top: 1px solid #e0e0e0;
 }
+
+.tab {
+    padding: 1.3rem;
+    color: var(--grey-light);
+    cursor: pointer;
+}
+
+.tab:hover {
+    background-color: rgba(32,33,36,0.039);
+    color: #202124;
+    
+}
+
+.active {
+    color: var(--black-dark);
+    border-bottom: 4px solid var(--black-dark);
+}
