@@ -6,10 +6,12 @@
   --black-light: #3c4043;
   --black-dark: #000000de;
   --grey-light: #5f6368;
+  --grey-medium: #3c4043;
   --grey-dark: #0000008c;
   --white: #ffffff;
   --product-sans: 'Product Sans', Arial, Helvetica, sans-serif;
   --icon-blue: #2962ff;
+  --hover-blue: #9ac1e869;
 }
 /* font-colors */
 .color-green {
@@ -30,8 +32,11 @@
 .color-grey {
   color: var(--grey-dark);
 }
+.color-grey-medium {
+  color: var(--grey-medium);
+}
 .color-grey-light {
-  color: var(--gret-light);
+  color: var(--grey-light);
 }
 .color-white {
   color: var(--white);

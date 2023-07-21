@@ -1,0 +1,51 @@
+:root {
+  /* colors */
+  --classroom-green: #25a667;
+  --classroom-yellow: #f6bb18;
+  --classroom-green-secondary: #57bb8a;
+  --black-light: #3c4043;
+  --black-dark: #000000de;
+  --grey-light: #5f6368;
+  --grey-medium: #3c4043;
+  --grey-dark: #0000008c;
+  --white: #ffffff;
+  --product-sans: 'Product Sans', Arial, Helvetica, sans-serif;
+  --icon-blue: #2962ff;
+  --hover-blue: #9ac1e869;
+}
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: fit-content;
+  border-right: 1px solid black;
+  font: inherit;
+  padding-right: 5px;
+  font-weight: 500;
+  font-size: 9px;
+  height: 100%;
+}
+
+.sidebar-section {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 0.2px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 0.2px solid rgba(0, 0, 0, 0.12);
+}
+.sidebar-section-title {
+  padding: 0.5rem 16px;
+  color: var(--grey-light);
+}
+
+.sidebar-item {
+  width: 150px;
+  background-color: var(--hover-blue);
+  border-radius: 0 2rem 2rem 0;
+  padding: 0.5rem 16px;
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 1rem;
+}
