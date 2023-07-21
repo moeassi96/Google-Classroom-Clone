@@ -130,3 +130,7 @@
 .padding-v-8px {
   padding: 8px 0px;
 }
+
+.br-50 {
+  border-radius: 50%;
+}
