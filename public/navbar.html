@@ -10,15 +10,30 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet" />
 
-    <script src="src/styles/index.css"></script>
-    <script src="src/styles/navbar.css"></script>
+    <link rel="stylesheet" href="src/styles/utility.css">
+    <link rel="stylesheet" href="src/styles/index.css">
+    <link rel="stylesheet" href="src/styles/navbar.css">
     <title>Google Classroom Clone</title>
 </head>
 
 <body>
     <header>
-        <nav>
-            
+        <nav class="flex items-center">
+            <div class="flex items-center padding-left-lg grow">
+                <div>
+                    <a href="#!">
+                        <img src="src/assets/images/icons/menu.svg" alt="">
+                    </a>
+                </div>
+                <div class="logo flex items-center">
+                    <img src="src/assets/images/googleLogo.svg" alt="">
+                    &nbsp;
+                    <span>Classroom</span>
+                </div>
+            </div>
+            <div class="right-part">
+
+            </div>
         </nav>
     </header>
     <main></main>

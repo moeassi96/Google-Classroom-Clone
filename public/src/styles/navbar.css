@@ -1,4 +1,14 @@
 nav {
     height: 64px;
-    
+}
+
+.logo {
+    padding-left: 16px;
+}
+
+.logo span {
+    color: var(--grey-light);
+    font-family: "Product Sans";
+    font-size: 1.3rem;
+    line-height: 1.7em;
 }
