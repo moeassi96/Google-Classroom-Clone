@@ -5,10 +5,20 @@ pages.base_url = 'http://localhost/Google-Classroom-Clone/backend/';
 pages.load_page = (page) => {
   switch (page) {
     case 'sign-up': {
-      console.log('hello im on page 1');
-      const container = document.getElementById('container');
-      container.innerHTML = '<h1>Hi assi</h1>';
-      console.log(body);
+      let step = 0
+
+      const content = document.querySelector(".input-wrapper")
+      content.innerHTML = signUpForm(step)
+
+      const next = document.getElementById("sign-up-next")
+      next.addEventListener("click", ()=>{
+        step++
+        content.innerHTML = signUpForm(step)
+        
+
+      })
+
     }
+
   }
 };
