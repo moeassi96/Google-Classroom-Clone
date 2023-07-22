@@ -35,6 +35,9 @@
   border-top: 0.2px solid rgba(0, 0, 0, 0.12);
   border-bottom: 0.2px solid rgba(0, 0, 0, 0.12);
 }
+.sidebar-section:last-child {
+  border-bottom: none;
+}
 .sidebar-section-title {
   padding: 0.5rem 16px;
   color: var(--grey-light);
@@ -42,9 +45,8 @@
 
 .sidebar-item {
   width: 300px;
-
   border-radius: 0 2rem 2rem 0;
-  padding: 1rem 16px;
+  padding: 1.2rem 1.5rem;
 }
 
 .sidebar-item:hover {
@@ -55,21 +57,35 @@
   width: 24px;
   height: 24px;
 }
+
+.todo {
+  width: 32px;
+}
+
 .side-icon-container {
   margin-right: 1rem;
 }
+
 .class-icon {
   width: 32px;
   height: 32px;
   background-color: green;
   text-align: center;
+  color: white;
+  font-size: 1rem;
 }
+
 .class-title {
+  font-weight: 400;
+  color: var(--black-dark);
 }
+
 .class-details {
+  font-weight: 200;
   font-size: 14px;
   width: 100%;
 }
+
 .class-description {
   width: 87%;
   font-size: 12px;
