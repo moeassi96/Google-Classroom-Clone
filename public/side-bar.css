@@ -20,15 +20,18 @@
   width: fit-content;
   border-right: 1px solid black;
   font: inherit;
-  padding-right: 5px;
+  padding-right: 7px;
   font-weight: 500;
-  font-size: 9px;
+  font-size: 14px;
   height: 100%;
+  width: 300px;
+  /* animation: 400ms open linear alternate; */
+  transition: 400ms left;
 }
 
 .sidebar-section {
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-top: 0.2px solid rgba(0, 0, 0, 0.12);
   border-bottom: 0.2px solid rgba(0, 0, 0, 0.12);
 }
@@ -38,14 +41,48 @@
 }
 
 .sidebar-item {
-  width: 150px;
-  background-color: var(--hover-blue);
+  width: 300px;
+
   border-radius: 0 2rem 2rem 0;
-  padding: 0.5rem 16px;
+  padding: 1rem 16px;
+}
+
+.sidebar-item:hover {
+  background-color: var(--hover-blue);
 }
 
 .icon {
-  width: 15px;
-  height: 15px;
+  width: 24px;
+  height: 24px;
+}
+.side-icon-container {
   margin-right: 1rem;
+}
+.class-icon {
+  width: 32px;
+  height: 32px;
+  background-color: green;
+  text-align: center;
+}
+.class-title {
+}
+.class-details {
+  font-size: 14px;
+  width: 100%;
+}
+.class-description {
+  width: 87%;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes open {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 0%;
+  }
 }
