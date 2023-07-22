@@ -334,3 +334,13 @@ a {
 .teacher img{
   border-radius: 20px;
 }
+
+.student{
+  gap: 20px;
+  width: 760px;
+  border-top: 1px solid gray;
+  padding: 20px 20px;
+}
+.student img{
+  border-radius: 20px;
+}
