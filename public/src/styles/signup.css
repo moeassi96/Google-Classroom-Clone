@@ -1,106 +1,106 @@
-.input-container {
-  width: 368px;
-  height: 416px;
-  border-style: inset;
-  border-width: 1px;
-  border-color: rgb(133, 133, 133);
-  border-radius: 10px;
-  padding: 40px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+body {
+  margin: 0px;
+  font-family: 'Google Sans', 'Noto Sans Myanmar UI', arial, sans-serif;
 }
-.input-title {
-  font-size: 24px;
-  text-align: center;
-  margin: 0;
-  padding: 16px 0 0 0;
-}
-
-.input-subtitle {
-  font-size: 16px;
-  text-align: center;
-  margin: 0;
-  padding: 8px 0;
-}
-
-.input {
-  margin: 24px 0 0 0;
-  padding: 12px 14px;
-  font-size: 16px;
-  border-radius: 4px;
-  border-width: 1px;
-  width: 336px;
-  height: 28px;
-}
-
-button {
-  margin: 26px 0 0 0;
-  font-size: 14px;
-  font-weight: 500px;
-  width: 79.1719px;
-  border: none;
-  color: white;
-  background: rgb(26, 115, 232);
-  height: 40px;
-  border-radius: 4px;
-}
-
-.btn {
-  width: 368px;
-}
-.birth-info {
-  margin: 32px 0 0 0;
-}
-/* .birth-info > input { */
-  /* padding: 15px 28px 13px 16px;
-  width: 68px;
-  height: 28;
-  border-radius: 4px;
-  border-width: 1px;
-  font-size: 16px;
-} */
-.sign-up-input{
-  width: 50px;
-  padding: 15px 28px 13px 16px;
-}
-
-/* .birth-info > .gender {
-  margin: 16px 0 0 0;
-  flex: 1;
-} */
-
-.gmail > .pass-info-holder > .pass-info {
-  margin: 0;
-}
-
-.gmail > .btn > .existing {
-  margin: 26px 0 0 0;
-}
-.pass-info-holder {
-  width: 368px;
-}
-
-.gmail > .checkbox {
-  width: 368px;
-  gap: 15px;
-}
-
-.privacy-container {
-  width: 368px;
-  height: auto;
-  border-style: inset;
-  border-width: 1px;
-  border-color: rgb(133, 133, 133);
-  border-radius: 10px;
-  padding: 40px;
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%);
+  padding-top: 2rem;
+  align-items: center;
 }
 
-.btn > .cancel {
-  margin: 26px 0 0 0;
+.form-wrapper {
+  width: 450px;
+  min-height: 500px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: rgb(204, 199, 199);
+}
+.form-pad {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 48px;
+  padding-bottom: 36px;
+}
+.form-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.form-head {
+  text-align: center;
+}
+.form-title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3333;
+  margin-bottom: 0;
+  color: #202124;
+}
+.form-title-description {
+  margin-top: 10px;
+  color: #202124;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  line-height: 1.5;
+}
+.form-input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.name-field {
+  padding: 12px 14px;
+  width: -webkit-fill-available;
+  font-size: 16px;
+  height: 30px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(199, 199, 201);
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin-top: 30px;
+}
+
+.next-button {
+  width: 80px;
+  height: 36px;
+  background-color: rgb(26, 115, 232);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 0.875rem;
+  letter-spacing: 0.0107142857em;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.gender-input-container {
+  display: flex;
+  justify-content: space-between;
+}
+.gender-field {
+  width: 80px;
+  height: 30px;
+  padding: 13px 15px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(199, 199, 201);
+  font-size: 1rem;
+  letter-spacing: 0.0107142857em;
+  font-weight: 500;
 }
