@@ -9,7 +9,47 @@
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'/>
 	</head>
 	<body>
-		<header class="navbar"></header>
+		<nav class="flex items-center">
+            <!-- In Class Navbar -->
+            <div class="flex items-center padding-left-lg">
+              <div>
+                <a href="#!">
+                  <img src="src/assets/images/icons/menu.svg" alt="" />
+                </a>
+              </div>
+              <div class="left-part flex items-center">
+                <p>
+                  FSW 23& 24 | Tech<br /><span class="section"
+                    >Full Stack Web Development Bootcamp</span
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center grow justify-center gap-20">
+              <div class="tab" id="stream">Stream</div>
+              <div class="tab active" id="classwork">Classwork</div>
+              <div class="tab" id="people">People</div>
+            </div>
+            <div class="right-part flex items-center">
+              <div class="apps-account flex items-center">
+                <div class="apps">
+                  <a href="#!">
+                    <img src="src/assets/images/icons/apps.svg" alt="" />
+                  </a>
+                </div>
+                <div class="account">
+                  <a href="#!">
+                    <img
+                      class="br-50"
+                      src="src/assets/images/defaults/default-user.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </nav>
+      
 
 		<main class="body-container flex">
 			<div class="left-container">
@@ -67,7 +107,7 @@
 						<div class="subject flex flex-col gap-10">
 							Subject
 							<div class="material flex flex-col border">
-								<div class="material-title flex justify-center items-center justify-between">
+								<div class="material-title flex justify-center items-center justify-between" id="material-title">
 									<div class="material-icon flex justify-center">
 										<img class="icon-material" src="./public/src/assets/images/square-logo/bookmark.svg" alt="bookmark-icon">
 									</div>
@@ -86,10 +126,10 @@
 										<img class="icon-vertical-dots align-self-center" src="./public/src/assets/images/square-logo/dots-v.svg" alt="vertical-dots">
 									</div>
 								</div>
-                                <div class="material-lower-div">
+                                <div class="material-hide" id="material-hide">
                                     <div class="material-content padding-lg">
                                         <div class="material-content-main flex flex-col gap-10">
-                                            <div class="material-description">
+                                            <div class="material-description" id="material-description">
                                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, iste. Accusantium, dolore nam ullam blanditiis ipsam impedit voluptas laudantium commodi! Ab consectetur quo, amet deserunt voluptates iste distinctio nemo quis.
                                             </div>
                                             <div class="material-attachment">
@@ -116,7 +156,7 @@
 							</div>
 
 							<div class="assignment flex flex-col border">
-								<div class="assignment-title flex justify-center items-center justify-between">
+								<div class="assignment-title flex justify-center items-center justify-between" id="assignment-title">
 									<div class="assignment-icon flex justify-center">
 										<img class="icon-assignment" src="./public/src/assets/images/square-logo/assignment.svg" alt="assignment-icon">
 									</div>
@@ -135,7 +175,60 @@
 										<img class="icon-vertical-dots" src="./public/src/assets/images/square-logo/dots-v.svg" alt="vertical-dots">
 									</div>
 								</div>
-                                <div class="assignment-lower-div hide">
+                                <div class="assignment-hide" id="assignment-hide">
+                                    <div class="assignment-content flex flex-col padding-lg">
+                                        <div class="assignment-content-main flex flex-col gap-10">
+                                            <div class="assignment-description">
+                                                Description: Lorem ipsum dolor sit amet consectetur
+                                                adipisicing elit. Nostrum molestiae quisquam incidunt
+                                                porro aliquid, rem, iure praesentium optio vero suscipit
+                                                debitis aut ipsa sed sequi quia, nihil accusamus
+                                                accusantium? Quia.
+                                            </div>
+    
+                                            <div class="assignment-attachment flex justify-start gap-10">
+                                                <a href="#" class="attachment flex border gap-9 justify-center items-center justify-between">
+                                                    <div class="attachment-drive-icon">
+                                                        <img class="drive-colored" src="./public/src/assets/images/square-logo/google-drive-colored.svg" alt="drive-colored">
+                                                    </div>
+    
+                                                    <div class="attachment-description">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing
+                                                        elit.
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="assignment-footer-container flex padding-lg">
+                                        <a href="#" class="assignment-footer flex justify-start">
+                                            View assignment
+                                        </a>
+                                    </div>
+                                </div>
+							</div>
+                            <div class="assignment flex flex-col border">
+								<div class="assignment-title flex justify-center items-center justify-between" id="assignment-title">
+									<div class="assignment-icon flex justify-center">
+										<img class="icon-assignment" src="./public/src/assets/images/square-logo/assignment.svg" alt="assignment-icon">
+									</div>
+
+									<div class="assignment-name-date flex justify-between">
+										<div class="assignment-name font-14px">
+											Assignment Title
+										</div>
+
+										<div class="assignment-date font-12px">
+											Due date
+										</div>
+									</div>
+
+									<div class="vertical-dots-toggle flex justify-center">
+										<img class="icon-vertical-dots" src="./public/src/assets/images/square-logo/dots-v.svg" alt="vertical-dots">
+									</div>
+								</div>
+                                <div class="assignment-hide" id="assignment-hide">
                                     <div class="assignment-content flex flex-col padding-lg">
                                         <div class="assignment-content-main flex flex-col gap-10">
                                             <div class="assignment-description">
@@ -175,5 +268,6 @@
 
 			<div class="right-container"></div>
 		</main>
+        <script src="./scripts/classwork.js"></script>
 	</body>
 </html>
