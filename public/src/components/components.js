@@ -62,6 +62,7 @@ function signUpForm(step) {
     <div class="form-input-container">
       
          <input class="name-field" type="text" placeholder="create an Gmail address" name="Gmail" id="Gmail">
+         <div class="error"></div>
     
     </div>
    `;
@@ -77,9 +78,10 @@ function signUpForm(step) {
     
     <div class="form-input-container">
       
-         <input class="name-field" type="text" placeholder="Password" name="Password" id="Password">
+         <input class="name-field" type="text" placeholder="Password" name="Password" id="password">
      
          <input class="name-field" type="text" placeholder="Confirm Password" name="password2" id="password2">
+         <div class="error"></div>
 
     </div>
     `;
@@ -116,5 +118,8 @@ function signUpForm(step) {
     <div class="flex justify-between items-center btn">
       <a href="#" class="cancel">cancel</a>
     `;
+   
+        
   }
+  
 }

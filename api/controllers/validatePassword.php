@@ -2,10 +2,10 @@
 include('connection.php');
 
 
-// header("Content-Type: application/json");
-// $data = json_decode(file_get_contents('php://input'), true);
+header("Content-Type: application/json");
+$data = json_decode(file_get_contents('php://input'), true);
 
-$password = $_POST['password'];
+$password = $data['password'];
 
 function isValidPassword($password){
     $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_@#$%^&*!])[A-Za-z\d\-_@#$%^&*!]{8,}$/';
