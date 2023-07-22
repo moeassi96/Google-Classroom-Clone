@@ -1,0 +1,19 @@
+<?php
+include('connection.php');
+
+$user_id = $_POST["user_id"];
+
+$query = $mysqli->prepare(
+    "SELECT classes.*, `classes-enrollments`.role
+    FROM classes
+    JOIN `classes-enrollments` ON classes.class_id = `classes-enrollments`.class_id
+    WHERE `classes-enrollments`.user_id = ?"
+);
+
+$query->bind_param('s', $user_id);
+$query->execute();
+$result = $query->get_result();
+$classes = $result->fetch_all(MYSQLI_ASSOC);
+
+echo json_encode($classes);
+?>
