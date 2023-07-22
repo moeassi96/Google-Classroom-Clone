@@ -35,3 +35,37 @@
     font-size: 1.5rem;
     font-weight: 500;
 }
+
+.stream-body {
+    margin-top: 1.5rem;
+}
+
+.stream-side-container {
+    width: 200px;
+    margin-right: 2rem;
+}
+
+.stream-content-box{
+    font-size: 1rem;
+    color: var(--grey-medium);
+    padding: 1rem;
+    border: 0.0625rem solid #dadce0;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.stream-google-meet-logo {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.stream-google-meet-name {
+    margin-left: 0.5rem;
+}
+
+.stream-google-meet-join {
+    background-color: var(--grey-medium);
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+}
