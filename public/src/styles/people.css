@@ -306,13 +306,30 @@ a {
   border-bottom: 1px solid rgb(19,115,51);
 }
 
-.classmates h1{
+.classmates-title{
+  width: 760px;
+  border-bottom: 1px solid rgb(19,115,51);
+}
+
+.student:nth-of-type(2){
+  border-top: none;
+}
+ 
+
+
+.classmates-container .classmates-title h1{
   font-weight: 400;
   color: rgb(19,115,51);
-  width: 760px;
   margin-top: 35px;
   padding: 18px 16px;
-  border-bottom: 1px solid rgb(19,115,51);
+  
+}
+
+.classmates-container .classmates-title p{
+  font-weight: 400;
+  color: rgb(19,115,51);
+  margin-top: 35px;
+  padding: 18px 16px ;
 }
 
 .department{
