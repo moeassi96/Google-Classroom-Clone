@@ -9,19 +9,13 @@
     <title>signup</title>
   </head>
   <body>
-    
-   <div class="input-container flex flex-col items-center" >
-    <img src="src/assets/images/googleLogo.svg">
-    <div class="input-wrapper">
-
+    <div class="input-container flex flex-col items-center">
+      <img src="src/assets/images/googleLogo.svg" />
+      <div id="sign-in-wrapper" class="input-wrapper"></div>
+      <div class="flex justify-end items-end btn">
+        <button id="sign-up-next" type="submit">Next</button>
+      </div>
     </div>
-    <div class="flex justify-end items-end btn"><button id="sign-up-next" type="submit">Next</button></div>
-  </div>  
-
-    
-
-
-
 
     <!-- <div class="privacy-container flex flex-col items-center" >
     <img src="src/assets/images/googleLogo.svg">
@@ -29,7 +23,7 @@
       <button type="submit">Next</button>
     </div>
   </div> -->
-  <script src="src/components/components.js"></script>
+    <script src="src/components/components.js"></script>
     <script src="./src/scripts/router.js"></script>
     <script>
       pages.load_page('sign-up');

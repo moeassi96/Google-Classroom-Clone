@@ -4,31 +4,30 @@ function signUpForm(step) {
       return `<p class="input-title">Create a Google Account</p>
       <p class="input-subtitle">Entre your name</p>
       <input id="first-name" type="text" placeholder="First name" class="input" />
-      
+      <div class="input-error"></div>
       <input
         id="last-name"
         type="text"
         placeholder="Last name (optional)"
         class="input"
       />
-            
-            `;
+      <div class = "input-error" /></div>`;
 
     case 1:
       return `<P class="input-title">Basic information</P>
-            <p class="input-subtitle">Enter your birthday and gender</p>
-            <div class="flex wrap flex-col justify-between birth-info"> 
-            <div class = "flex justify-between">
-              <input id="month" class="sign-up-input" placeholder="Month">
-                <div class = "input-error" />>
-              <input id="day" class="sign-up-input" placeholder="Day">
-              <div class = "input-error" />
-              <input id="year" class="sign-up-input" placeholder="Year">
-<div class = "input-error" />
-            </div>
-              <input placeholder="Gender" class="gender">
+              <p class="input-subtitle">Enter your birthday and gender</p>
+              <div class="flex wrap flex-col justify-between birth-info">
+              <div class = "flex justify-between">
+                <input id="month" class="sign-up-input" placeholder="Month">
+                  <div class = "input-error" />
+                <input id="day" class="sign-up-input" placeholder="Day">
+                <div class = "input-error" />
+                <input id="year" class="sign-up-input" placeholder="Year">
+    <div class = "input-error" />
+              </div>
+                <input placeholder="Gender" class="gender">
 
-            </div>`;
+              </div>`;
     case 2:
       return `<P class="input-title">How you’ll sign in</P>
             <p class="input-subtitle">Create a Gmail address for signing in to your Google Account</p>
