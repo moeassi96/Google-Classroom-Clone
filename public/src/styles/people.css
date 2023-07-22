@@ -310,6 +310,27 @@ a {
   font-weight: 400;
   color: rgb(19,115,51);
   width: 760px;
+  margin-top: 35px;
   padding: 18px 16px;
   border-bottom: 1px solid rgb(19,115,51);
+}
+
+.department{
+  gap: 20px;
+  width: 760px;
+  padding: 20px 20px;
+}
+
+.teacher{
+  gap: 20px;
+  width: 760px;
+  border-top: 1px solid gray;
+  padding: 20px 20px;
+}
+.department img{
+  border-radius: 20px;
+}
+
+.teacher img{
+  border-radius: 20px;
 }
