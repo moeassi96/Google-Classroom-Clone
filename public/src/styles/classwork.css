@@ -1,0 +1,53 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.left-container{
+    flex: 1 1 0;
+    padding-top: 6.2%;
+    padding-left: 4%;
+}
+
+.mid-container{
+    flex: 3 1 0;
+    padding-top: 4%;
+}
+
+.right-container{
+    flex: 1 1 0;
+    padding-top: 4%;
+    padding-right: 4%;
+}
+
+.material-icon{
+    flex: 1 1 0;
+    text-align: left;
+}
+
+.material-name-date{
+    flex: 7 1 0;;
+}
+
+.vertical-dots-toggle{
+    flex: 1 1 0;
+    text-align: right;
+}
+
+.assignments-materials{
+    padding-top: 2%;
+}
+
+.attachment{
+    width: 45%;
+}
+
+/* .material-content-main{
+    justify-content: space-around;
+} */
