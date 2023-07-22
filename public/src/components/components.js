@@ -1,48 +1,62 @@
-function signUpForm(step){
-
-    switch(step){
-        case 0:
-            return  `<p class="input-title">Create a Google Account</p>
-            <p class="input-subtitle">Entre your name</p>
-            <input type="text" placeholder="First name" class="input">
-            <input type="text" placeholder="Last name (optional)" class="input">`
-        case 1:
-            return `<P class="input-title">Basic information</P>
-            <p class="input-subtitle">Enter your birthday and gender</p>
-            <div class="flex wrap flex-col justify-between birth-info">
+function signUpForm(step) {
+  switch (step) {
+    case 0:
+      return `<p class="input-title">Create a Google Account</p>
+      <p class="input-subtitle">Entre your name</p>
+      <input id="first-name" type="text" placeholder="First name" class="input" />
+      
+      <input
+        id="last-name"
+        type="text"
+        placeholder="Last name (optional)"
+        class="input"
+      />
             
+            `;
+
+    case 1:
+      return `<P class="input-title">Basic information</P>
+            <p class="input-subtitle">Enter your birthday and gender</p>
+            <div class="flex wrap flex-col justify-between birth-info"> 
             <div class = "flex justify-between">
-              <input class="sign-up-input" placeholder="Month">
-              <input class="sign-up-input" placeholder="Day">
-              <input class="sign-up-input" placeholder="Year">
+              <input id="month" class="sign-up-input" placeholder="Month">
+                <div class = "input-error" />>
+              <input id="day" class="sign-up-input" placeholder="Day">
+              <div class = "input-error" />
+              <input id="year" class="sign-up-input" placeholder="Year">
+<div class = "input-error" />
             </div>
               <input placeholder="Gender" class="gender">
-            </div>` 
-        case 2:
-            return `<P class="input-title">How you’ll sign in</P>
+
+            </div>`;
+    case 2:
+      return `<P class="input-title">How you’ll sign in</P>
             <p class="input-subtitle">Create a Gmail address for signing in to your Google Account</p>
-            <input type="text" placeholder="Username" class="input">
+            <input id="username" type="text" placeholder="Username" class="input">
+            <div class = "input-error" />
             <div class="flex items-start pass-info-holder"><p class="pass-info">You can use letters, numbers & periods</p></div>
             <div class="flex justify-between items-center btn">
-              <a href="#" class="existing">Use your existing email</a>`
+              <a href="#" class="existing">Use your existing email</a>`;
 
-        case 3:
-            return `<p class="input-title">Create a strong password</p>
+    case 3:
+      return `<p class="input-title">Create a strong password</p>
             <p class="input-subtitle">
               Create a strong password with a mix of letters, numbers and symbols
             </p>
-            <input type="text" placeholder="Password" class="input" />
-            <input type="text" placeholder="Confirm" class="input" />
+            <input id="" type="text" placeholder="Password" class="input" />
+            <div class = "input-error" />
+            <input id="" type="text" placeholder="Confirm" class="input" />
+            < div class = "input-error" />
             <div class="flex checkbox">
               <input type="checkbox" />
-              <p>Show password</p>`
+              <p>Show password</p>`;
 
-        case 4:
-            return `<P class="input-title">Review your account info</P>
-            <p class="input-subtitle">You can use this email address to sign in later</p>`
+    case 4:
+      return `<P class="input-title">Review your account info</P>
+            <p class="input-subtitle">You can use this email address to sign in later</p>`;
 
-        case 5:
-            return `<P class="input-title">Privacy and Terms</P>
+    case 5:
+      return `<P class="input-title">Privacy and Terms</P>
             <div class="flex flex-col">
               <p>To create a Google Account, you’ll need to agree to the Terms of Service below.</p>
               <p>In addition, when you create an account, we process your information as described in our Privacy Policy, including these key points:</p>
@@ -68,7 +82,6 @@ function signUpForm(step){
               <p>Depending on your account settings, some of this data may be associated with your Google Account and we treat this data as personal information. You can control how we collect and use this data now by clicking “More Options” below. You can always adjust your controls later or withdraw your consent for the future by visiting My Account (myaccount.google.com).</p>
             </div>
             <div class="flex justify-between items-center btn">
-              <a href="#" class="cancel">cancel</a>`
-          
-    }
+              <a href="#" class="cancel">cancel</a>`;
+  }
 }
