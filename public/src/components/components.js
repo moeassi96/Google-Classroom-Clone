@@ -46,8 +46,13 @@ function signUpForm(step) {
          <input class="gender-field" type="text" placeholder="Month" name="Month" id="Month">
          <input class="gender-field" type="text" placeholder="Year" name="Year" id="Year">
         </div>
+        <div id="wrongdate" class="error"></div>
+        
          <input class="name-field" type="text" placeholder="Gender" name="Gender" id="Gender">
+         <div id="emptygender" class="error"></div>
+
          <input class="name-field" type="text" placeholder="Phone Number" name="phone" id="phone">
+         <div id="wrongphone" class="error"></div>
 
     </div>
    `;
@@ -61,7 +66,7 @@ function signUpForm(step) {
     </div>
     <div class="form-input-container">
       
-         <input class="name-field" type="text" placeholder="create an Gmail address" name="Gmail" id="Gmail">
+         <input class="name-field" type="text" placeholder="create a Gmail address" name="Gmail" id="Gmail">
          <div class="error"></div>
     
     </div>

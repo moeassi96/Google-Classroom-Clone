@@ -2,17 +2,17 @@
 include('connection.php');
 
 
-// header("Content-Type: application/json");
-// $data = json_decode(file_get_contents('php://input'), true);
+header("Content-Type: application/json");
+$data = json_decode(file_get_contents('php://input'), true);
 
 
-$email = $_POST['email'];
-$password = $_POST['password'];
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$birthdate = $_POST['birthdate'];
-$gender = $_POST['gender'];
-$phone = $_POST['phone'];
+$email = $data['email'];
+$password = $data['password'];
+$firstname = $data['firstname'];
+$lastname = $data['lastname'];
+$birthdate = $data['birthdate'];
+$gender = $data['gender'];
+$phone = $data['phone'];
 
 $check_email = $mysqli->prepare('select user_email from users where user_email=?');
 $check_email->bind_param('s', $email);
