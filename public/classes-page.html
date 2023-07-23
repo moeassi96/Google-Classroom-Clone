@@ -11,6 +11,7 @@
     />
     <link rel="stylesheet" href="src/styles/utility.css" />
     <link rel="stylesheet" href="src/styles/classes-page.css" />
+    <link rel="stylesheet" href="src/styles/add-class.css">
     <title>Google Classroom Clone</title>
   </head>
 
@@ -31,10 +32,12 @@
           </div>
         </div>
         <div class="right-part flex items-center">
-          <div class="add">
-            <a href="#!">
-              <img src="src/assets/images/icons/add.svg" alt="" />
-            </a>
+          <div class="add-icon" id="add-icon">
+              <img src="src/assets/images/icons/add.svg" alt="add-icon" />
+              <div class="add-class-dropdown" id="add-class-dropdown">
+                <div class="add-class-dropdown-item" id="join-class">Join class</div>
+                <div class="add-class-dropdown-item" id="create-class">Create class</div>
+              </div>
           </div>
           <div class="apps-account flex items-center">
             <div class="apps">
@@ -361,5 +364,6 @@
       </div>
     </main>
     <footer></footer>
+    <script src="src/scripts/add-class.js"></script>
   </body>
 </html>
