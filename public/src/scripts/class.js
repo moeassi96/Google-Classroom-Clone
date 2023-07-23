@@ -24,6 +24,25 @@ window.addEventListener("load", async ()=>{
           
           const role = await roleresponse.json();
           console.log(role.role)
+
+
+
+      classworkbtn = document.getElementById("classwork")
+      peopleBtn = document.getElementById("people")
+
+      classworkbtn.addEventListener('click',()=>{
+
+        window.location.href = `classwork.html?class_id=${class_id}`;
+
+      })
+
+      peopleBtn.addEventListener('click',()=>{
+
+        window.location.href = `people.html?class_id=${class_id}`;
+
+      })
+
+
           
 })
 

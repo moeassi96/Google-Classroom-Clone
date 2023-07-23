@@ -106,3 +106,18 @@ displayAssignment([
 		attachmentCaption: 'Awesome',
 	},
 ]);
+
+const urlParams = new URLSearchParams(window.location.search);
+const class_id = urlParams.get('class_id');
+
+const streambtn = document.getElementById("stream")
+const peoplebtn = document.getElementById("people")
+
+streambtn.addEventListener("click",()=>{
+    window.location.href = `class.html?class_id=${class_id}`
+})
+peoplebtn.addEventListener("click",()=>{
+    window.location.href = `people.html?class_id=${class_id}`
+})
+
+
