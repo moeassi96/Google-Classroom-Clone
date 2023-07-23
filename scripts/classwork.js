@@ -1,14 +1,12 @@
-// id="assignment-${index}"
-
 function displayAssignment(assignments) {
-  const assignmentsList = document.getElementById('assignments-container');
-  assignmentsList.innerHTML = '';
+	const assignmentsList = document.getElementById('assignments-container');
+	assignmentsList.innerHTML = '';
 
-  //Looping over assignments, then appending to assignments-container
-  assignments.forEach((assignment, index) => {
-    assignmentsList.innerHTML += `<div class="assignment flex flex-col border" id="assignment-${index}">
+	//Looping over assignments, then appending to assignments-container
+	assignments.forEach((assignment, index) => {
+		assignmentsList.innerHTML += `<div class="assignment flex flex-col border" id="assignment-${index}">
         <div
-            class="assignment-title flex justify-center items-center justify-between"
+            class="assignment-title color-black-light flex justify-center items-center justify-between"
             tabindex="1"
             id="assignment-title"
         >
@@ -22,14 +20,14 @@ function displayAssignment(assignments) {
 
             <div class="assignment-name-date flex justify-between">
                 <div
-                    class="assignment-name font-14px"
+                    class="assignment-name"
                     id="assignment-name"
                 >
                     ${assignment.name}
                 </div>
 
                 <div
-                    class="assignment-date font-12px"
+                    class="assignment-date"
                     id="assignment-date"
                 >
                     ${assignment.date}
@@ -44,7 +42,7 @@ function displayAssignment(assignments) {
                 />
             </div>
         </div>
-        <div class="assignment-hide" id="assignment-hide-${index}">
+        <div class="assignment-hide color-black-light" id="assignment-hide-${index}">
             <div class="assignment-content flex flex-col padding-lg">
                 <div class="assignment-content-main flex flex-col gap-10">
                     <div
@@ -59,18 +57,14 @@ function displayAssignment(assignments) {
                     >
                         <a
                             href="#"
-                            class="attachment flex border gap-9 justify-center items-center justify-between"
+                            class="attachment gap-9 justify-center items-center"
                         >
-                            <div class="attachment-drive-icon">
+                            <div class="attachment-drive-icon flex justify-center">
                             <img src="./public/src/assets/images/square-logo/google-drive-colored.svg" alt="drive-icon-colored" class="drive-icon-colored">
                             </div>
 
-                            <div
-                                class="attachment-description"
-                                id="attachment-description"
-                            >
-                                Lorem ipsum dolor sit amet consectetur adipisicing
-                                elit.
+                            <div class="attachment-description color-black-light flex justify-self-start" id="attachment-description">
+                            ${assignment.attachmentCaption}
                             </div>
                         </a>
                     </div>
@@ -78,25 +72,37 @@ function displayAssignment(assignments) {
             </div>
 
             <div class="assignment-footer-container flex padding-lg">
-                <a href="#" class="assignment-footer flex justify-start">
+                <a href="#" class="assignment-footer color-black-light flex justify-start">
                     View assignment
                 </a>
             </div>
         </div>
     </div>`;
-  });
+	});
 
-  //Adding event listeners for description toggle
-  const assignment_list = document.getElementsByClassName('assignment');
-  const assignment_arr = Array.from(assignment_list);
+	//Adding event listeners for description toggle
+	const assignment_list = document.getElementsByClassName('assignment');
+	const assignment_arr = Array.from(assignment_list);
 
-  assignment_arr.forEach((element, index) => {
-    const info = document.getElementById(`assignment-hide-${index}`);
-    element.addEventListener('click', () => {
-      info.classList.toggle('open-assignment');
-    });
-  });
+	assignment_arr.forEach((element, index) => {
+		const info = document.getElementById(`assignment-hide-${index}`);
+		element.addEventListener('click', () => {
+			info.classList.toggle('open-assignment');
+		});
+	});
 }
 displayAssignment([
-  { name: 'uncle bob', date: 'blabla', description: 'hello brother' },
+	{
+		name: 'uncle bob',
+		date: 'Monday',
+		description: 'hello brother',
+		attachmentCaption:
+			'Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome',
+	},
+	{
+		name: 'uncle bob',
+		date: 'Monday',
+		description: 'hello brother',
+		attachmentCaption: 'Awesome',
+	},
 ]);
