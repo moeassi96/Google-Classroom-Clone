@@ -1,142 +1,145 @@
-*, *::before, *::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.left-container{
-    flex: 1 1 0;
-    padding-top: 4%;
-    padding-left: 4%;
-    padding-right: 0;
+.left-container {
+  flex: 1 1 0;
+  padding-top: 4%;
+  padding-left: 4%;
+  padding-right: 0;
 }
 
-.mid-container{
-    flex: 3 1 0;
-    padding-top: 2%;
+.mid-container {
+  flex: 3 1 0;
+  padding-top: 2%;
 }
 
-.right-container{
-    flex: 1 1 0;
-    padding-top: 4%;
-    padding-right: 4%;
+.right-container {
+  flex: 1 1 0;
+  padding-top: 4%;
+  padding-right: 4%;
 }
 
-.assignment-icon{
-    flex: 1 1 0;
-    text-align: left;
-    margin-left: 10px;
+.assignment-icon {
+  flex: 1 1 0;
+  text-align: left;
+  margin-left: 10px;
 }
 
-.assignment-name-date{
-    flex: 7 1 0;;
+.assignment-name-date {
+  flex: 7 1 0;
 }
 
-.vertical-dots-toggle{
-    flex: 1 1 0;
-    text-align: right;
+.vertical-dots-toggle {
+  flex: 1 1 0;
+  text-align: right;
 }
 
-.drive-icon-colored{
-    width: 50px;
-    height: 50px;
+.drive-icon-colored {
+  width: 50px;
+  height: 50px;
 }
 
-.view-work, 
+.view-work,
 .meet,
 .calendar,
 .drive,
 .assignment-name,
 .assignment-description,
 .attachment-description,
-.assignment-footer{
-    font-size: 14px;
+.assignment-footer {
+  font-size: 14px;
 }
 
-.assignment-date{
-    font-size: 12px;
+.assignment-date {
+  font-size: 12px;
 }
 
-.assignments-materials{
-    padding-top: 2%;
+.assignments-materials {
+  padding-top: 2%;
 }
 
-.attachment{
-    width: 45%;
-    justify-content: space-around;
+.attachment {
+  width: 45%;
+  justify-content: space-around;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .all-topics-link {
-    text-decoration: none;
-    color: #999999;
+  text-decoration: none;
+  color: #999999;
 }
 
-li{
-    padding: 10px;
-    border: 0px;
-    font-size: 13px;
-    height: 35px;
-    width: 125px;
-    display: flex;
-    align-items: center;
+li {
+  padding: 10px;
+  border: 0px;
+  font-size: 13px;
+  height: 35px;
+  width: 125px;
+  display: flex;
+  align-items: center;
 }
 
-li:hover, li:focus{
-    background-color:#f5f1f1;
-    border-radius: 5px;
+li:hover,
+li:focus {
+  background-color: #f5f1f1;
+  border-radius: 5px;
 }
 
-.icon{
-    width: 15px;
-    height: 15px;
+.icon {
+  width: 15px;
+  height: 15px;
 }
 
-.drive-colored{
-    width: 50px;
-    height: 50px;
-    padding: 10px 30px;
-    border-right: 1px solid;
+.drive-colored {
+  width: 50px;
+  height: 50px;
+  padding: 10px 30px;
+  border-right: 1px solid;
 }
 
-.icon-assignment{
-    width: 35px;
-    height: 35px;
-    padding: 5px;
-    background-color: #e6e6e6;
-    border-radius: 50%;
+.icon-assignment {
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  background-color: #e6e6e6;
+  border-radius: 50%;
 }
 
-.assignment-title:hover{
-    background-color:#f5f1f1;
+.assignment-title:hover {
+  background-color: #f5f1f1;
 }
 
-.assignment-title{
-    height: 60px;
-    border-bottom: 1px solid #dadce0;
+.assignment-title {
+  height: 60px;
+  border-bottom: 1px solid #dadce0;
 }
 
-.topics{
-    padding-top: 35px;
+.topics {
+  padding-top: 35px;
 }
 
-.assignment{
-    border-radius: 5px;
+.assignment {
+  border-radius: 5px;
 }
 
-.assignment-footer-container{
-    border-top: 1px solid #dadce0;
+.assignment-footer-container {
+  border-top: 1px solid #dadce0;
 }
 
-.assignment-hide{
-    display: none;
+.assignment-hide {
+  display: none;
 }
 
-.open-assignment{
-    display: block;
+.open-assignment {
+  display: block;
 }
 
 /* .assignment-hide:hover{

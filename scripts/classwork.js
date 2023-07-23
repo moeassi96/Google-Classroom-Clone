@@ -1,10 +1,12 @@
 // id="assignment-${index}"
 
-function displayAssignment(assignments){
-    const assignmentsList = document.getElementById("assignments-container");
-    assignmentsList.innerHTML = "";
-    assignments.forEach((assignment,index) => {
-        assignmentsList.innerHTML += `<div class="assignment flex flex-col border">
+function displayAssignment(assignments) {
+  const assignmentsList = document.getElementById('assignments-container');
+  assignmentsList.innerHTML = '';
+
+  //Looping over assignments, then appending to assignments-container
+  assignments.forEach((assignment, index) => {
+    assignmentsList.innerHTML += `<div class="assignment flex flex-col border" id="assignment-${index}">
         <div
             class="assignment-title flex justify-center items-center justify-between"
             tabindex="1"
@@ -42,7 +44,7 @@ function displayAssignment(assignments){
                 />
             </div>
         </div>
-        <div class="assignment-hide" id="assignment-hide">
+        <div class="assignment-hide" id="assignment-hide-${index}">
             <div class="assignment-content flex flex-col padding-lg">
                 <div class="assignment-content-main flex flex-col gap-10">
                     <div
@@ -81,18 +83,20 @@ function displayAssignment(assignments){
                 </a>
             </div>
         </div>
-    </div>`
-    const element = document.getElementById(`assignment-${index}`)
-    element.addEventListener("click", () => {
-        element.classList.toggle("open-assignment")
-        console.log("hello")
-    })
+    </div>`;
+  });
+
+  //Adding event listeners for description toggle
+  const assignment_list = document.getElementsByClassName('assignment');
+  const assignment_arr = Array.from(assignment_list);
+
+  assignment_arr.forEach((element, index) => {
+    const info = document.getElementById(`assignment-hide-${index}`);
+    element.addEventListener('click', () => {
+      info.classList.toggle('open-assignment');
     });
+  });
 }
-
 displayAssignment([
-    {name:"Uncle Bob",date:"Sunday",description:"Fearsome uncle bob"},
-    {name:"Uncle Bob strikes again",date:"Sunday",description:"Fearsome uncle bob"}
-])
-
-
+  { name: 'uncle bob', date: 'blabla', description: 'hello brother' },
+]);
