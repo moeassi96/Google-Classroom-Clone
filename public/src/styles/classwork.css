@@ -63,9 +63,14 @@ body{
 .drive,
 .assignment-name,
 .assignment-description,
-.attachment-description,
 .assignment-footer {
 	font-size: 14px;
+}
+
+
+.attachment-description{
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .assignment-date {
