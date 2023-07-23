@@ -28,14 +28,15 @@ window.addEventListener("load", async ()=>{
 
 
       classworkbtn = document.getElementById("classwork")
-      peoplebtn = document.getElementById("people")
+      peopleBtn = document.getElementById("people")
 
       classworkbtn.addEventListener('click',()=>{
 
         window.location.href = `classwork.html?class_id=${class_id}`;
 
       })
-      peoplebtn.addEventListener('click',()=>{
+
+      peopleBtn.addEventListener('click',()=>{
 
         window.location.href = `people.html?class_id=${class_id}`;
 

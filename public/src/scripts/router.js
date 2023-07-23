@@ -197,19 +197,26 @@ pages.load_page = async (page) => {
           })
           const students = await res_students.json();
 
-
-
-
-
           displayUser(
             students,
             teachers
            );
-       
+
+
+
+    const streambtn = document.getElementById("stream")
+    const classworkbtn = document.getElementById("classwork")
+
+    streambtn.addEventListener("click",()=>{
+      window.location.href = `class.html?class_id=${class_id}`
+    })
+    classworkbtn.addEventListener("click",()=>{
+      window.location.href = `classwork.html?class_id=${class_id}`
+    })
+
 
 
       
-    
     }
   }
 };
