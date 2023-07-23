@@ -2,11 +2,11 @@
 <?php
 include('connection.php');
 
-// header("Content-Type: application/json");
-// $data = json_decode(file_get_contents('php://input'), true);
+header("Content-Type: application/json");
+$data = json_decode(file_get_contents('php://input'), true);
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+$email = $data['email'];
+$password = $data['password'];
 
 $query = $mysqli->prepare(
     'select user_id, user_firstname,
