@@ -79,4 +79,14 @@ function sideBar(classes) {
       </div>
     </div>
   </div>`;
+
+  const teaching = document.getElementById('teaching');
+  const enrolled = document.getElementById('enrolled');
+
+  classes.enrolled.forEach((element) => {
+    enrolled.innerHTML += sideBarClass(element);
+  });
+  classes.enrolled.forEach((element) => {
+    enrolled.innerHTML += sideBarClass(element);
+  });
 }
