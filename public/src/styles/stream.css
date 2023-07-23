@@ -1,0 +1,102 @@
+.stream-container {
+    color: var(--white);
+    margin: auto;
+    height: auto;
+    width: calc(100% - 3rem);
+    max-width: 60rem;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.stream-class-info {
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.stream-class-banner {
+    border-radius: 0.5rem;
+    background-image: url("../assets/images/defaults/default-class-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    min-height: 240px;
+}
+
+.stream-class-name {
+    margin: 1rem 1.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.stream-class-section {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.stream-body {
+    margin-top: 1.5rem;
+}
+
+.stream-side-container {
+    width: 200px;
+    min-width: 200px;
+    margin-right: 2rem;
+}
+
+.stream-content-box {
+    font-size: 1rem;
+    color: var(--grey-medium);
+    padding: 1rem;
+    border: 0.0625rem solid #dadce0;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 45.5rem;
+}
+
+.stream-google-meet-logo {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.stream-google-meet-name {
+    margin-left: 0.5rem;
+}
+
+.stream-google-meet-join {
+    background-color: var(--grey-medium);
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 0.3rem;
+}
+
+
+.stream-assignment-icon {
+    background-color: var(--grey-medium);
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.stream-assignment-details {
+    margin-left: 1rem;
+}
+
+.stream-assignment-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #484c4d;
+    max-width: 500px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.stream-assignment-date {
+    margin-top: 0.2rem;
+    font-size: 12px;
+    font-weight: 500;
+    color:  #8a8d91;
+}
