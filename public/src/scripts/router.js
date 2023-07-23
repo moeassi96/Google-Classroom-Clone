@@ -1,102 +1,104 @@
 const pages = {};
 
 pages.base_url =
-  "http://localhost/google-clone/Google-Classroom-Clone/api/controllers/";
+  'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/';
 
 pages.load_page = (page) => {
   switch (page) {
-    case "sign-up": {
+    case 'sign-up': {
       let step = 0;
 
       let user = {};
 
-      const content = document.getElementById("form-body");
+      const content = document.getElementById('form-body');
 
       content.innerHTML = signUpForm(step);
-      const next = document.getElementById("next-button");
-      const first_name = document.getElementById("first-name");
-      const last_name = document.getElementById("last-name");
+      const next = document.getElementById('next-button');
+      const first_name = document.getElementById('first-name');
+      const last_name = document.getElementById('last-name');
 
-      next.addEventListener("click", async () => {
+      next.addEventListener('click', async () => {
         if (step === 0) {
-
           const nameRegex = /^[^\d\s]{2,}$/;
 
           if (!nameRegex.test(first_name.value)) {
             first_name.nextElementSibling.innerHTML =
-              "Please insert your real name";
+              'Please insert your real name';
             return;
           } else if (!nameRegex.test(last_name.value)) {
-            first_name.nextElementSibling.innerHTML = "";
+            first_name.nextElementSibling.innerHTML = '';
             last_name.nextElementSibling.innerHTML =
-              "Please insert your real surname";
+              'Please insert your real surname';
             return;
           } else {
             user.firstname = first_name.value;
             user.lastname = last_name.value;
           }
         } else if (step === 1) {
-          user.birthday = document.getElementById("Day");
-          user.birthmonth = document.getElementById("Month");
-          user.birthyear = document.getElementById("Year");
-          user.gender = document.getElementById("Gender").value;
-          user.phone = document.getElementById("phone").value;
+          user.birthday = document.getElementById('Day');
+          user.birthmonth = document.getElementById('Month');
+          user.birthyear = document.getElementById('Year');
+          user.gender = document.getElementById('Gender').value;
+          user.phone = document.getElementById('phone').value;
           user.birthdate =
-          user.birthyear.value + "-" + user.birthmonth.value + "-" + user.birthday.value;
+            user.birthyear.value +
+            '-' +
+            user.birthmonth.value +
+            '-' +
+            user.birthday.value;
 
           const birthdateRegex = /^\d{4}-\d{2}-\d{2}$/;
           const phoneNumberRegex = /^\d{8}$/;
 
-          if (!birthdateRegex.test(user.birthdate)){
-
-            document.getElementById("wrongdate").innerHTML =
-              "Invalid Date format";
-            return
-          }else if(user.gender === ""){
-            
-            document.getElementById("emptygender").innerHTML = "please specify a gender"
-            return
-          }else if(!phoneNumberRegex.test(user.phone)){
-            document.getElementById("wrongphone").innerHTML = "Invalid phone number"
-            document.getElementById("emptygender").innerHTML = ""
-            document.getElementById("wrongdate").innerHTML ="";
-            return
+          if (!birthdateRegex.test(user.birthdate)) {
+            document.getElementById('wrongdate').innerHTML =
+              'Invalid Date format';
+            return;
+          } else if (user.gender === '') {
+            document.getElementById('emptygender').innerHTML =
+              'please specify a gender';
+            return;
+          } else if (!phoneNumberRegex.test(user.phone)) {
+            document.getElementById('wrongphone').innerHTML =
+              'Invalid phone number';
+            document.getElementById('emptygender').innerHTML = '';
+            document.getElementById('wrongdate').innerHTML = '';
+            return;
           }
-
-          
         } else if (step === 2) {
-          const gmail = document.getElementById("Gmail");
+          const gmail = document.getElementById('Gmail');
           const email_regex =
             /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
           if (!email_regex.test(gmail.value)) {
-            gmail.nextElementSibling.innerHTML = "Invalid email format";
+            gmail.nextElementSibling.innerHTML = 'Invalid email format';
             return;
           } else {
             user.email = gmail.value;
             const res = await fetch(`${pages.base_url}/validateEmail.php`, {
               headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json',
               },
-              method: "POST",
+              method: 'POST',
               body: JSON.stringify({ email: user.email }),
             });
             const json = await res.json();
-            console.log(json.status)
-            if(json.status === "Email already exists"){
-              gmail.nextElementSibling.innerHTML = "Email already has an account";
-              return
-            }else if(json.status === "Wrong email format") {
-              gmail.nextElementSibling.innerHTML = "Invalid email format";
-              return
+            console.log(json.status);
+            if (json.status === 'Email already exists') {
+              gmail.nextElementSibling.innerHTML =
+                'Email already has an account';
+              return;
+            } else if (json.status === 'Wrong email format') {
+              gmail.nextElementSibling.innerHTML = 'Invalid email format';
+              return;
             }
           }
         } else if (step === 3) {
-          const password = document.getElementById("password");
-          const password2 = document.getElementById("password2");
+          const password = document.getElementById('password');
+          const password2 = document.getElementById('password2');
 
           if (password.value !== password2.value) {
-            password2.nextElementSibling.innerHTML = "Unmatching passwords";
+            password2.nextElementSibling.innerHTML = 'Unmatching passwords';
             return;
           } else {
             const password_regex =
@@ -104,18 +106,26 @@ pages.load_page = (page) => {
 
             if (!password_regex.test(password.value)) {
               password2.nextElementSibling.innerHTML =
-                "Password should be 8 characters long, and contains atleast 1 capital, 1 small, 1 digit and 1 special character";
+                'Password should be 8 characters long, and contains atleast 1 capital, 1 small, 1 digit and 1 special character';
               return;
             } else {
               user.password = password.value;
-              console.log(user.email,user.firstname,user.lastname,user.phone,user.gender,user.password,user.birthdate)
+              console.log(
+                user.email,
+                user.firstname,
+                user.lastname,
+                user.phone,
+                user.gender,
+                user.password,
+                user.birthdate
+              );
               const res = await fetch(
                 `${pages.base_url}/validatePassword.php`,
                 {
                   headers: {
-                    "Content-Type": "application/json",
+                    'Content-Type': 'application/json',
                   },
-                  method: "POST",
+                  method: 'POST',
                   body: JSON.stringify({ password: user.password }),
                 }
               );
@@ -125,34 +135,61 @@ pages.load_page = (page) => {
         }
 
         if (step === 4) {
-          console.log(user.email,user.firstname,user.lastname,user.phone,user.gender,user.password,user.birthdate)
+          console.log(
+            user.email,
+            user.firstname,
+            user.lastname,
+            user.phone,
+            user.gender,
+            user.password,
+            user.birthdate
+          );
           const toadd = {
-            email:user.email,
-            firstname:user.firstname,
-            lastname:user.lastname,
-            phone:user.phone,
-            gender:user.gender,
-            password:user.password,
-            birthdate:user.birthdate
-          }
-          console.log(JSON.stringify(toadd))
+            email: user.email,
+            firstname: user.firstname,
+            lastname: user.lastname,
+            phone: user.phone,
+            gender: user.gender,
+            password: user.password,
+            birthdate: user.birthdate,
+          };
+          console.log(JSON.stringify(toadd));
           const res = await fetch(`${pages.base_url}/signUp.php`, {
             headers: {
-              "Content-Type": "application/json",
+              'Content-Type': 'application/json',
             },
-            method: "POST",
+            method: 'POST',
             body: JSON.stringify(toadd),
           });
           const json = await res.json();
-          console.log(json.status)
-
-
-
-
+          console.log(json.status);
         }
         step++;
         content.innerHTML = signUpForm(step);
       });
+    }
+    case 'people': {
+      //FETCH USER
+      // const people = await fetch(`${pages.base_url}/`)
+
+      displayUser(
+        [
+          { name: 'mostafa kreidly' },
+          { name: 'mostafa kreidly' },
+          { name: 'mostafa kreidly' },
+          { name: 'mostafa kreidly' },
+          { name: 'mostafa kreidly' },
+        ],
+        [
+          { name: 'amer hammoud' },
+          { name: 'amer hammoud' },
+          { name: 'amer hammoud' },
+          { name: 'amer hammoud' },
+          { name: 'amer hammoud' },
+          { name: 'amer hammoud' },
+          { name: 'amer hammoud' },
+        ]
+      );
     }
   }
 };
