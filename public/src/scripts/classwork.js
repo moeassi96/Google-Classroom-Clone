@@ -5,7 +5,7 @@ function displayAssignment(assignments) {
 	//Looping over assignments, then appending to assignments-container
 	assignments.forEach((assignment, index) => {
 
-
+        assign_id = assignment.assignment_id
         creator = assignment.user_firstname + " " + assignment.user_lastname + " posted a new assignment:"
         title = assignment.assignment_name
         date = assignment.assignment_date
@@ -130,7 +130,15 @@ window.addEventListener("load", async()=>{
     
           displayAssignment(assignments);
 
+          const streambtn = document.getElementById("stream")
+            const peoplebtn = document.getElementById("people")
 
+            streambtn.addEventListener("click",()=>{
+                window.location.href = `class.html?class_id=${class_id}`
+            })
+            peoplebtn.addEventListener("click",()=>{
+                window.location.href = `people.html?class_id=${class_id}`
+            })
 })
 
 
@@ -141,14 +149,6 @@ window.addEventListener("load", async()=>{
 
 
 
-const streambtn = document.getElementById("stream")
-const peoplebtn = document.getElementById("people")
 
-streambtn.addEventListener("click",()=>{
-    window.location.href = `class.html?class_id=${class_id}`
-})
-peoplebtn.addEventListener("click",()=>{
-    window.location.href = `people.html?class_id=${class_id}`
-})
 
 
