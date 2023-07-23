@@ -13,7 +13,7 @@ function displayAssignment(assignments) {
             <div class="assignment-icon flex justify-center">
                 <img
                     class="icon-assignment"
-                    src="./public/src/assets/images/square-logo/assignment.svg"
+                    src="src/assets/images/square-logo/assignment.svg"
                     alt="assignment-icon"
                 />
             </div>
@@ -37,7 +37,7 @@ function displayAssignment(assignments) {
             <div class="vertical-dots-toggle flex justify-center">
                 <img
                     class="icon-vertical-dots"
-                    src="./public/src/assets/images/square-logo/dots-v.svg"
+                    src="src/assets/images/square-logo/dots-v.svg"
                     alt="vertical-dots"
                 />
             </div>
@@ -60,7 +60,7 @@ function displayAssignment(assignments) {
                             class="attachment gap-9 justify-center items-center"
                         >
                             <div class="attachment-drive-icon flex justify-center">
-                            <img src="./public/src/assets/images/square-logo/google-drive-colored.svg" alt="drive-icon-colored" class="drive-icon-colored">
+                            <img src="src/assets/images/square-logo/google-drive-colored.svg" alt="drive-icon-colored" class="drive-icon-colored">
                             </div>
 
                             <div class="attachment-description color-black-light flex justify-self-start" id="attachment-description">
