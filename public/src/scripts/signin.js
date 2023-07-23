@@ -31,7 +31,7 @@ window.addEventListener('load',()=>{
             } else if(data.status === "logged in") {
                 // localStorage.setItem('user_id', user_id);
                 console.log(data.user_id)
-                // window.location.href = "welcome.html";
+                window.location.href = "classes-page.html";
                 
             }else{
               document.getElementById("invalid-email").innerText = "";
