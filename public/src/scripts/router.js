@@ -144,10 +144,8 @@ pages.load_page = (page) => {
             body: JSON.stringify(toadd),
           });
           const json = await res.json();
-          console.log(json.status)
-
-
-
+                
+          window.location.href = "signin.html";
 
         }
         step++;

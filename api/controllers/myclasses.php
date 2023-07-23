@@ -1,7 +1,10 @@
 <?php
 include('connection.php');
 
-$user_id = $_POST["user_id"];
+header("Content-Type: application/json");
+$data = json_decode(file_get_contents('php://input'), true);
+
+$user_id = $data["user_id"];
 
 $query = $mysqli->prepare(
     "SELECT classes.*, `classes-enrollments`.role

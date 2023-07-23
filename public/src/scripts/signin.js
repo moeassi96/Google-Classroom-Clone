@@ -29,8 +29,8 @@ window.addEventListener('load',()=>{
                 document.getElementById("invalid-email").innerText = "invalid-email";
                 
             } else if(data.status === "logged in") {
-                // localStorage.setItem('user_id', user_id);
-                console.log(data.user_id)
+                localStorage.setItem('user_id', data.user_id);
+                
                 window.location.href = "classes-page.html";
                 
             }else{
