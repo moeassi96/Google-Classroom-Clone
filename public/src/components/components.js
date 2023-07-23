@@ -128,3 +128,14 @@ function signUpForm(step) {
   }
   
 }
+
+function signInForm(step){
+  switch (step) {
+    case 0:
+
+
+
+
+
+  }
+}
