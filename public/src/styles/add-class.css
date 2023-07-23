@@ -36,3 +36,132 @@
 .add-class-dropdown-item:hover {
     background-color: rgb(247, 247, 247);
 }
+
+.create-class-container {
+    background-color: rgba(2, 2, 2, 0.528);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.create-class-close{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.create-class-container-show{
+    display: flex !important;
+}
+
+.create-class-popup {
+    background-color: white;
+    height: 400px;
+    width: 550px;
+    border-radius: 8px;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1rem 1rem 0.3rem 1rem;
+    z-index: 1002;
+}
+
+.create-class-input-container {
+    margin: 0.5rem 0;
+    width: 100%;
+    height: 3.5rem;
+}
+
+.create-class-label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    background-color: #F1F3F4;
+}
+
+.create-class-placeholder {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.1rem;
+    z-index: 10;
+    color: rgb(95, 99, 104);
+}
+
+.create-class-placeholder-enabled {
+    animation: move-enabled 0.5s forwards;
+}
+
+.create-class-input-parent {
+    width: 100%;
+    margin: 0 1rem;
+}
+
+.create-class-input {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    border: none;
+    height: 70%;
+    width: 95%;
+    padding: 0 1rem;
+    font-family: "Roboto";
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: #F1F3F4;
+}
+
+.create-class-input:focus {
+    outline: none;
+}
+
+@keyframes move-enabled {
+    from {
+        left: 1.5rem;
+        top: 1.1rem;
+    }
+
+    to {
+        left: 1rem;
+        top: 0.3rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+}
+
+.create-class-buttons-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: auto;
+}
+
+.create-class-button {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    cursor: pointer;
+    font-family: "Roboto";
+}
+
+.create-class-button:hover {
+    background-color: rgba(0, 0, 0, 0.047);
+}
+
+.create-class-button:active {
+    background-color: rgba(0, 0, 0, 0.146);
+}
