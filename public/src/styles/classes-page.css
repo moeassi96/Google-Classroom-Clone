@@ -21,6 +21,25 @@ nav {
   padding-left: 16px;
 }
 
+.navbar-hamburger-button {
+  border: none;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-hamburger-button:hover {
+  background-color: rgb(247, 247, 247);
+}
+
+.navbar-hamburger-button:active {
+  background-color: rgb(218, 218, 218);
+}
+
 .left-part .classroom {
   color: var(--grey-light);
   font-size: 1.3rem;

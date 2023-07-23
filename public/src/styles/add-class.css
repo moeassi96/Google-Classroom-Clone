@@ -13,6 +13,10 @@
     background-color: rgb(247, 247, 247);
 }
 
+.add-icon:active {
+    background-color: rgb(218, 218, 218);
+}
+
 .add-class-dropdown {
     display: none;
     position: absolute;
