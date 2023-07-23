@@ -1,23 +1,20 @@
 function displayAssignment(assignments) {
-	const assignmentsList = document.getElementById('assignments-container');
-	assignmentsList.innerHTML = '';
+  const assignmentsList = document.getElementById('assignments-container');
+  assignmentsList.innerHTML = '';
 
-	//Looping over assignments, then appending to assignments-container
-	assignments.forEach((assignment, index) => {
-
-        assign_id = assignment.assignment_id
-        creator = assignment.user_firstname + " " + assignment.user_lastname + " posted a new assignment:"
-        title = assignment.assignment_name
-        date = assignment.assignment_date
-        description = assignment.assignment_description
-        attachmentCaption = 'Awesome',
-
-
-
-
-
-
-		assignmentsList.innerHTML += `<div class="assignment flex flex-col border" id="assignment-${index}">
+  //Looping over assignments, then appending to assignments-container
+  assignments.forEach((assignment, index) => {
+    assign_id = assignment.assignment_id;
+    creator =
+      assignment.user_firstname +
+      ' ' +
+      assignment.user_lastname +
+      ' posted a new assignment:';
+    title = assignment.assignment_name;
+    date = assignment.assignment_date;
+    description = assignment.assignment_description;
+    (attachmentCaption = 'Awesome'),
+      (assignmentsList.innerHTML += `<div class="assignment flex flex-col border" id="assignment-${index}">
         <div
             class="assignment-title color-black-light flex justify-center items-center justify-between"
             tabindex="1"
@@ -90,65 +87,47 @@ function displayAssignment(assignments) {
                 </a>
             </div>
         </div>
-    </div>`;
-	});
+    </div>`);
+  });
 
-	//Adding event listeners for description toggle
-	const assignment_list = document.getElementsByClassName('assignment');
-	const assignment_arr = Array.from(assignment_list);
+  //Adding event listeners for description toggle
+  const assignment_list = document.getElementsByClassName('assignment');
+  const assignment_arr = Array.from(assignment_list);
 
-	assignment_arr.forEach((element, index) => {
-		const info = document.getElementById(`assignment-hide-${index}`);
-		element.addEventListener('click', () => {
-			info.classList.toggle('open-assignment');
-		});
-	});
+  assignment_arr.forEach((element, index) => {
+    const info = document.getElementById(`assignment-hide-${index}`);
+    element.addEventListener('click', () => {
+      info.classList.toggle('open-assignment');
+    });
+  });
 }
 
+window.addEventListener('load', async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const class_id = urlParams.get('class_id');
 
+  const response = await fetch(
+    'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getassignments.php',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ class_id }),
+    }
+  );
 
+  const assignments = await response.json();
 
+  displayAssignment(assignments);
 
+  const streambtn = document.getElementById('stream');
+  const peoplebtn = document.getElementById('people');
 
-
-window.addEventListener("load", async()=>{
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const class_id = urlParams.get('class_id');
-
-    const response = await fetch("http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getassignments.php", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({class_id}),
-          })
-          
-          
-          const assignments = await response.json();
-
-    
-          displayAssignment(assignments);
-
-          const streambtn = document.getElementById("stream")
-            const peoplebtn = document.getElementById("people")
-
-            streambtn.addEventListener("click",()=>{
-                window.location.href = `class.html?class_id=${class_id}`
-            })
-            peoplebtn.addEventListener("click",()=>{
-                window.location.href = `people.html?class_id=${class_id}`
-            })
-})
-
-
-
-
-
-
-
-
-
-
-
-
+  streambtn.addEventListener('click', () => {
+    window.location.href = `class.html?class_id=${class_id}`;
+  });
+  peoplebtn.addEventListener('click', () => {
+    window.location.href = `people.html?class_id=${class_id}`;
+  });
+});

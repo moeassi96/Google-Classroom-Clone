@@ -1,19 +1,19 @@
 function displaystream(assignments) {
-  const assignmentsList = document.getElementById("streamFeed");
-  assignmentsList.innerHTML = "";
+  const assignmentsList = document.getElementById('streamFeed');
+  assignmentsList.innerHTML = '';
 
   //Looping over assignments, then appending to assignments-container
   assignments.forEach((assignment, index) => {
     assign_id = assignment.assignment_id;
     creator =
       assignment.user_firstname +
-      " " +
+      ' ' +
       assignment.user_lastname +
-      " posted a new assignment:";
+      ' posted a new assignment:';
     title = creator + assignment.assignment_name;
     date = assignment.assignment_date;
     description = assignment.assignment_description;
-    (attachmentCaption = "Awesome"),
+    (attachmentCaption = 'Awesome'),
       (assignmentsList.innerHTML += `<div class="stream-content-box cursor-pointer">
     <a href='assignment.html?assignment_id=${assign_id}'>
         <div class="stream-assignment-box flex">
@@ -34,10 +34,10 @@ function displaystream(assignments) {
   });
 }
 
-window.addEventListener("load", async () => {
+window.addEventListener('load', async () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const class_id = urlParams.get("class_id");
-  const user_id = localStorage.getItem("user_id");
+  const class_id = urlParams.get('class_id');
+  const user_id = localStorage.getItem('user_id');
 
   const user = {
     user_id,
@@ -46,11 +46,11 @@ window.addEventListener("load", async () => {
 
   // getting role of user in this class
   const roleresponse = await fetch(
-    "http://localhost/google-clone/Google-Classroom-Clone/api/controllers/role.php",
+    'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/role.php',
     {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(user),
     }
@@ -59,23 +59,23 @@ window.addEventListener("load", async () => {
   const role = await roleresponse.json();
   console.log(role.role);
 
-  classworkbtn = document.getElementById("classwork");
-  peopleBtn = document.getElementById("people");
+  classworkbtn = document.getElementById('classwork');
+  peopleBtn = document.getElementById('people');
 
-  classworkbtn.addEventListener("click", () => {
+  classworkbtn.addEventListener('click', () => {
     window.location.href = `classwork.html?class_id=${class_id}`;
   });
 
-  peopleBtn.addEventListener("click", () => {
+  peopleBtn.addEventListener('click', () => {
     window.location.href = `people.html?class_id=${class_id}`;
   });
 
   const response = await fetch(
-    "http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getassignments.php",
+    'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getassignments.php',
     {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ class_id }),
     }

@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/styles/utility.css" />
     <link rel="stylesheet" href="src/styles/index.css" />
-    <link rel="stylesheet" href="src/styles/stream.css">
+    <link rel="stylesheet" href="src/styles/stream.css" />
     <title>Google Classroom Clone</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="flex items-center">
-            <!-- In Classes Page Navbar -->
-            <!-- <div class="flex items-center padding-left-lg grow">
+      <nav class="flex items-center">
+        <!-- In Classes Page Navbar -->
+        <!-- <div class="flex items-center padding-left-lg grow">
                 <div>
                     <a href="#!">
                         <img src="src/assets/images/icons/menu.svg" alt="" />
@@ -51,8 +51,8 @@
                 </div>
             </div> -->
 
-            <!-- In Assignment Navbar -->
-            <!-- <div class="flex items-center padding-left-lg grow">
+        <!-- In Assignment Navbar -->
+        <!-- <div class="flex items-center padding-left-lg grow">
                 <div>
                     <a href="#!">
                         <img src="src/assets/images/icons/menu.svg" alt="">
@@ -77,43 +77,51 @@
                 </div>
             </div> -->
 
-            <!-- In Class Navbar -->
-            <div class="flex items-center padding-left-lg">
-                <div>
-                    <a href="#!">
-                        <img src="src/assets/images/icons/menu.svg" alt="">
-                    </a>
-                </div>
-                <div class="left-part flex items-center">
-                    <p>FSW 23& 24 | Tech<br><span class="section">Full Stack Web Development Bootcamp</span></p>
-                </div>
+        <!-- In Class Navbar -->
+        <div class="flex items-center padding-left-lg">
+          <div>
+            <a href="#!">
+              <img src="src/assets/images/icons/menu.svg" alt="" />
+            </a>
+          </div>
+          <div class="left-part flex items-center">
+            <p>
+              FSW 23& 24 | Tech<br /><span class="section"
+                >Full Stack Web Development Bootcamp</span
+              >
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center grow justify-center gap-20">
+          <div class="tab active" id="stream">Stream</div>
+          <div class="tab" id="classwork">Classwork</div>
+          <div class="tab" id="people">People</div>
+        </div>
+        <div class="right-part flex items-center">
+          <div class="apps-account flex items-center">
+            <div class="apps">
+              <a href="#!">
+                <img src="src/assets/images/icons/apps.svg" alt="" />
+              </a>
             </div>
-            <div class="flex items-center grow justify-center gap-20">
-                <div class="tab active" id="stream">Stream</div>
-                <div class="tab" id="classwork">Classwork</div>
-                <div class="tab" id="people">People</div>
+            <div class="account">
+              <a href="#!">
+                <img
+                  class="br-50"
+                  src="src/assets/images/defaults/default-user.png"
+                  alt=""
+                />
+              </a>
             </div>
-            <div class="right-part flex items-center">
-                <div class="apps-account flex items-center">
-                    <div class="apps">
-                        <a href="#!">
-                            <img src="src/assets/images/icons/apps.svg" alt="">
-                        </a>
-                    </div>
-                    <div class="account">
-                        <a href="#!">
-                            <img class="br-50" src="src/assets/images/defaults/default-user.png" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <hr class="nav-hr" />
+          </div>
+        </div>
+      </nav>
+      <hr class="nav-hr" />
     </header>
 
     <main>
-        <!-- sidebar -->
-        <!-- <div class="sidebar flex flex-col items-center">
+      <!-- sidebar -->
+      <!-- <div class="sidebar flex flex-col items-center">
             <div class="sidebar-section">
                 <div class="sidebar-item flex items-center">
                     <div class="side-icon-container">
@@ -184,41 +192,51 @@
                 </div>
             </div>
         </div> -->
-        <!-- end of sidebar -->
+      <!-- end of sidebar -->
 
-        <!-- Start of Stream Body -->
+      <!-- Start of Stream Body -->
 
-        <div class="stream-container flex flex-col">
-            <div class="stream-class-info">
-                <div class="stream-class-banner flex items-end justify-start" id="stream-class-banner">
-                    <div class="stream-class-name">
-                        FSW 23&24 | Tech <br /> <span class="stream-class-section">Full Stack Web Development
-                            Bootcamp</span>
-                    </div>
-                </div>
+      <div class="stream-container flex flex-col">
+        <div class="stream-class-info">
+          <div
+            class="stream-class-banner flex items-end justify-start"
+            id="stream-class-banner"
+          >
+            <div class="stream-class-name">
+              FSW 23&24 | Tech <br />
+              <span class="stream-class-section"
+                >Full Stack Web Development Bootcamp</span
+              >
             </div>
-            <div class="stream-body flex">
-                <div class="stream-side-container flex flex-col">
-                    <div class="side-container-meet-link color-black">
-                        <div class="stream-content-box">
-                            <div class="stream-google-meet flex items-center">
-                                <img class="stream-google-meet-logo" src="src/assets/images/meet.png" alt="">
-                                <div class="stream-google-meet-name flex items-center grow">
-                                    Meet
-                                </div>
-                                <img src="src/assets/images/icons/dots-v.svg" alt="">
-                            </div>
-                            <div class="stream-google-meet-join flex justify-center">
-                                <a href="#!" class="color-white">Join</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="stream-upcoming-assignments">
-
-                    </div>
+          </div>
+        </div>
+        <div class="stream-body flex">
+          <div class="stream-side-container flex flex-col">
+            <div class="side-container-meet-link color-black">
+              <div class="stream-content-box">
+                <div class="stream-google-meet flex items-center">
+                  <img
+                    class="stream-google-meet-logo"
+                    src="src/assets/images/meet.png"
+                    alt=""
+                  />
+                  <div class="stream-google-meet-name flex items-center grow">
+                    Meet
+                  </div>
+                  <img src="src/assets/images/icons/dots-v.svg" alt="" />
                 </div>
-                <div class="stream-feed flex flex-col grow color-black" id="streamFeed">
-                    <!-- <div class="stream-content-box cursor-pointer">
+                <div class="stream-google-meet-join flex justify-center">
+                  <a href="#!" class="color-white">Join</a>
+                </div>
+              </div>
+            </div>
+            <div class="stream-upcoming-assignments"></div>
+          </div>
+          <div
+            class="stream-feed flex flex-col grow color-black"
+            id="streamFeed"
+          >
+            <!-- <div class="stream-content-box cursor-pointer">
                         <a href="#!">
                             <div class="stream-assignment-box flex">
                                 <div class="stream-assignment-icon flex items-center justify-center">
@@ -252,13 +270,11 @@
                             </div>
                         </a>
                     </div> -->
-                </div>
-            </div>
+          </div>
         </div>
-
+      </div>
     </main>
     <footer></footer>
     <script src="src/scripts/class.js"></script>
-</body>
-
+  </body>
 </html>

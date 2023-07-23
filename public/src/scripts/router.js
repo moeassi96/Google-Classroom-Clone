@@ -162,8 +162,8 @@ pages.load_page = async (page) => {
             body: JSON.stringify(toadd),
           });
           const json = await res.json();
-                
-          window.location.href = "signin.html";
+
+          window.location.href = 'signin.html';
 
           console.log(json.status);
         }
@@ -172,51 +172,45 @@ pages.load_page = async (page) => {
       });
     }
     case 'people': {
-      
       const urlParams = new URLSearchParams(window.location.search);
       const class_id = urlParams.get('class_id');
-      console.log(class_id)
+      console.log(class_id);
 
-      
-    const res =  await fetch("http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getteachers.php", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({class_id}),
-          })
-          const teachers = await res.json();
-  
+      const res = await fetch(
+        'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getteachers.php',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ class_id }),
+        }
+      );
+      const teachers = await res.json();
 
-    const res_students =  await fetch("http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getstudents.php", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({class_id}),
-          })
-          const students = await res_students.json();
+      const res_students = await fetch(
+        'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getstudents.php',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ class_id }),
+        }
+      );
+      const students = await res_students.json();
 
-          displayUser(
-            students,
-            teachers
-           );
+      displayUser(students, teachers);
 
+      const streambtn = document.getElementById('stream');
+      const classworkbtn = document.getElementById('classwork');
 
-
-    const streambtn = document.getElementById("stream")
-    const classworkbtn = document.getElementById("classwork")
-
-    streambtn.addEventListener("click",()=>{
-      window.location.href = `class.html?class_id=${class_id}`
-    })
-    classworkbtn.addEventListener("click",()=>{
-      window.location.href = `classwork.html?class_id=${class_id}`
-    })
-
-
-
-      
+      streambtn.addEventListener('click', () => {
+        window.location.href = `class.html?class_id=${class_id}`;
+      });
+      classworkbtn.addEventListener('click', () => {
+        window.location.href = `classwork.html?class_id=${class_id}`;
+      });
     }
   }
 };

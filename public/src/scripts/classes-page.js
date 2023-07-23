@@ -1,41 +1,37 @@
+window.addEventListener('load', async () => {
+  const user_id = localStorage.getItem('user_id');
+  console.log(user_id);
+  const user = {
+    user_id: user_id,
+  };
 
-
-window.addEventListener("load", async ()=>{
-
-    const user_id = localStorage.getItem('user_id');
-    console.log(user_id)
-    const user = {
-        user_id: user_id
+  const response = await fetch(
+    'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/myclasses.php',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
     }
-    
-    
-    const response = await fetch("http://localhost/google-clone/Google-Classroom-Clone/api/controllers/myclasses.php", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(user),
-          })
-          
-          
-          const classes = await response.json();
-          
-    
-    console.log(classes)
-    const cardscontainer = document.getElementById("cards-container")
+  );
 
-    for (let i = 0; i < classes.length; i++) {
-        const classid = classes[i].class_id;
-        const classname = classes[i].class_name;
-        const class_section = classes[i].class_section;
-        const class_subject = classes[i].class_subject;
-        
-        console.log("Class Name:", classname);
-        console.log("Class Section:", class_section);
-        console.log("Class Subject:", class_subject);
-        
-        cardscontainer.innerHTML += 
-        `
+  const classes = await response.json();
+
+  console.log(classes);
+  const cardscontainer = document.getElementById('cards-container');
+
+  for (let i = 0; i < classes.length; i++) {
+    const classid = classes[i].class_id;
+    const classname = classes[i].class_name;
+    const class_section = classes[i].class_section;
+    const class_subject = classes[i].class_subject;
+
+    console.log('Class Name:', classname);
+    console.log('Class Section:', class_section);
+    console.log('Class Subject:', class_subject);
+
+    cardscontainer.innerHTML += `
         <li class="card-body flex flex-col">
           <div class="card-header">
             <div class="card-header-content flex flex-col justify-between">
@@ -84,10 +80,6 @@ window.addEventListener("load", async ()=>{
         
         
         
-        `
-
-
-      }
-
-
-})
+        `;
+  }
+});
