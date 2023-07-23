@@ -6,6 +6,10 @@
 	box-sizing: border-box;
 }
 
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
 .left-container {
 	flex: 1 1 0;
 	padding-top: 3%;
@@ -66,6 +70,7 @@
 
 .assignment-date {
 	font-size: 12px;
+	color: #999999;
 }
 
 .attachment {
