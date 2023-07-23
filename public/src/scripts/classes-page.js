@@ -1,10 +1,11 @@
 window.addEventListener('load', async () => {
+ 
   const user_id = localStorage.getItem('user_id');
   console.log(user_id);
   const user = {
     user_id: user_id,
   };
-
+  sideBar({})
   const response = await fetch(
     'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/myclasses.php',
     {

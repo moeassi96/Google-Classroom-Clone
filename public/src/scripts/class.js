@@ -1,4 +1,5 @@
 function displaystream(assignments) {
+
   const assignmentsList = document.getElementById('streamFeed');
   assignmentsList.innerHTML = '';
 
@@ -38,7 +39,7 @@ window.addEventListener('load', async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const class_id = urlParams.get('class_id');
   const user_id = localStorage.getItem('user_id');
-
+  sideBar({})
   const user = {
     user_id,
     class_id,
@@ -57,7 +58,7 @@ window.addEventListener('load', async () => {
   );
 
   const role = await roleresponse.json();
-  console.log(role.role);
+  
 
   classworkbtn = document.getElementById('classwork');
   peopleBtn = document.getElementById('people');

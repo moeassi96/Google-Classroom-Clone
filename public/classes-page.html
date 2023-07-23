@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="src/styles/utility.css" />
     <link rel="stylesheet" href="src/styles/classes-page.css" />
     <link rel="stylesheet" href="src/styles/add-class.css" />
+    <link rel="stylesheet" href="src/styles/side-bar.css">
     <title>Google Classroom Clone</title>
   </head>
 
@@ -21,9 +22,9 @@
         <!-- In Classes Page Navbar -->
         <div class="flex items-center padding-left-lg grow">
           <div>
-            <a href="#!">
+            <button id="hamburger">
               <img src="src/assets/images/icons/menu.svg" alt="" />
-            </a>
+            </button>
           </div>
           <div class="left-part flex items-center">
             <img src="src/assets/images/googleLogo.svg" alt="" />
@@ -122,6 +123,8 @@
     </header>
 
     <main>
+      <div id="close-sidebar"></div>
+      <div id="sidebar" class="sidebar flex flex-col items-center"></div>
       <!-- Add Class Popup -->
       <div class="create-class-container" id="create-class-container">
         <div class="create-class-close" id="create-class-close"></div>
@@ -296,5 +299,6 @@
     <footer></footer>
     <script src="src/scripts/classes-page.js"></script>
     <script src="src/scripts/add-class.js"></script>
+    <script src="src/components/sidebar.js"></script>
   </body>
 </html>

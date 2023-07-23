@@ -174,7 +174,7 @@ pages.load_page = async (page) => {
     case 'people': {
       const urlParams = new URLSearchParams(window.location.search);
       const class_id = urlParams.get('class_id');
-      console.log(class_id);
+      sideBar({})
 
       const res = await fetch(
         'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getteachers.php',

@@ -2,7 +2,7 @@ const sideBarClass = (element) => {
   return ` <div class="class-item sidebar-item flex items-center">
   <div class="side-icon-container">
     <div class="class-icon flex items-center justify-center br-50">
-     ${element.title.char(0).upperCase()}
+     ${element.title.charAt(0).toUpperCase()}
     </div>
   </div>
   <div class="class-details flex flex-col">
@@ -14,18 +14,22 @@ const sideBarClass = (element) => {
 </div>
  `;
 };
-//Local storage an {enrolled:[{title,description}], teaching:[]}
+//Local storage, expecting: {enrolled:[{title,description}], teaching:[]}
 
 function sideBar(classes) {
-  return `<div id="sidebar" class="sidebar flex flex-col items-center">
-    <div class="sidebar-section">
+  const sideBar = document.getElementById("sidebar");
+  const button = document.getElementById("hamburger");
+  console.log(button)
+  if (!sideBar) return;
+  sideBar.innerHTML = `<div id="close-sidebar" class="close-sidebar"></div>
+  <div class="sidebar-section">
       <div class="sidebar-item flex items-center">
         <div class="side-icon-container">
           <img class="icon" src="./src/assets/images/icons/home.svg" />
         </div>
         <span class="color-grey-medium">Classes</span>
       </div>
-
+  
       <div class="sidebar-item flex items-center">
         <div class="side-icon-container">
           <img
@@ -36,32 +40,13 @@ function sideBar(classes) {
         <span class="color-grey-medium">Calendar</span>
       </div>
     </div>
-   
-   
-    <div id="teaching" class="sidebar-section flex flex-col">
+    <div class="sidebar-section flex flex-col">
       <div class="sidebar-section-title color-grey-medium">Teaching</div>
-      <div class="sidebar-item flex">
-        <div class="side-icon-container todo flex justify-center">
-          <img
-            class="icon"
-            src="./src/assets/images/icons/folder-with-lines.svg"
-          />
-        </div>
-        <span class="color-grey-medium">To do</span>
-      </div>
-    <div id="enrolled" class="sidebar-section flex flex-col">
+      <div id="teaching"></div>
+    </div>
+    <div class="sidebar-section flex flex-col">
       <div class="sidebar-section-title color-grey-medium">Enrolled</div>
-      <div class="sidebar-item flex">
-        <div class="side-icon-container todo flex justify-center">
-          <img
-            class="icon"
-            src="./src/assets/images/icons/fact_check.svg"
-          />
-        </div>
-        <span class="color-grey-medium">To do</span>
-      </div>
-
-     
+      <div id="enrolled"></div>
     </div>
     <div class="sidebar-section">
       <div class="sidebar-item flex items-center">
@@ -70,7 +55,7 @@ function sideBar(classes) {
         </div>
         <span class="color-grey-medium">Archive</span>
       </div>
-
+  
       <div class="sidebar-item flex items-center">
         <div class="side-icon-container">
           <img class="icon" src="./src/assets/images/icons/settings.svg" />
@@ -78,15 +63,28 @@ function sideBar(classes) {
         <span class="color-grey-medium">Settings</span>
       </div>
     </div>
-  </div>`;
+  `;
+  const close_sidebar = document.getElementById("close-sidebar");
+  button.addEventListener("click", () => {
+    console.log("clicked");
+    sideBar.classList.add("show-sidebar");
+    close_sidebar.style.width = "100vw";
+  });
+  close_sidebar.addEventListener("click", () => {
+    sideBar.classList.remove("show-sidebar");
+    close_sidebar.style.width = "0";
+  });
 
-  const teaching = document.getElementById('teaching');
-  const enrolled = document.getElementById('enrolled');
+  const teaching = document.getElementById("teaching");
 
+  console.log(classes);
+  if (!classes.enrolled) return;
   classes.enrolled.forEach((element) => {
+    const enrolled = document.getElementById("enrolled");
     enrolled.innerHTML += sideBarClass(element);
   });
-  classes.enrolled.forEach((element) => {
-    enrolled.innerHTML += sideBarClass(element);
+  if (!classes.teaching) return;
+  classes.teaching.forEach((element) => {
+    teaching.innerHTML += sideBarClass(element);
   });
 }

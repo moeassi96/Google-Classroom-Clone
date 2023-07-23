@@ -6,6 +6,7 @@
     <title>Classwork</title>
     <link rel="stylesheet" href="src/styles/utility.css" />
     <link rel="stylesheet" href="src/styles/classwork.css" />
+    <link rel="stylesheet" href="src/styles/side-bar.css">
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap"
       rel="stylesheet"
@@ -16,9 +17,9 @@
       <!-- In Class Navbar -->
       <div class="flex items-center padding-left-lg">
         <div>
-          <a href="#!">
-            <img src="src/assets/images/icons/menu.svg" alt="" />
-          </a>
+          <button id="hamburger">
+            <img src="src/assets/images/icons/menu.svg" alt="">
+        </button>
         </div>
         <div class="left-part flex items-center">
           <p>
@@ -54,6 +55,8 @@
     </nav>
 
     <main class="body-container flex">
+      <div id="close-sidebar"></div>
+      <div id="sidebar" class="sidebar flex flex-col items-center"></div>
       <div class="left-container">
         <div class="topics">
           <ul class="list-of-topics flex flex-col">
@@ -123,6 +126,7 @@
       </div>
       <div class="right-container"></div>
     </main>
+    <script src="src/components/sidebar.js"></script>
     <script src="src/scripts/classwork.js"></script>
   </body>
 </html>
