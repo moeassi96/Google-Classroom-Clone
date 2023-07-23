@@ -1,3 +1,155 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.left-container{
+    flex: 1 1 0;
+    padding-top: 6.2%;
+    padding-left: 4%;
+    padding-right: 0;
+}
+
+.mid-container{
+    flex: 3 1 0;
+    padding-top: 4%;
+}
+
+.right-container{
+    flex: 1 1 0;
+    padding-top: 4%;
+    padding-right: 4%;
+}
+
+.material-icon, .assignment-icon{
+    flex: 1 1 0;
+    text-align: left;
+    margin-left: 10px;
+}
+
+/* .material-icon, .assignment-icon{
+    margin-left: 10px;
+} */
+
+.material-name-date, .assignment-name-date{
+    flex: 7 1 0;;
+}
+
+.vertical-dots-toggle{
+    flex: 1 1 0;
+    text-align: right;
+}
+
+.view-work, .meet,
+.calendar,
+.drive,
+.assignment-name,
+.assignment-description,
+.attachment-description,
+.assignment-footer{
+    font-size: 14px;
+}
+
+.assignment-date{
+    font-size: 12px;
+}
+
+.assignments-materials{
+    padding-top: 2%;
+}
+
+.attachment{
+    width: 45%;
+    justify-content: space-around;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.all-topics-link {
+    text-decoration: none;
+    color: #999999;
+}
+
+li{
+    padding: 10px;
+    /* margin: 10px; */
+    border: 0px;
+    font-size: 13px;
+    height: 35px;
+    width: 125px;
+    display: flex;
+    align-items: center;
+}
+
+li:hover, li:focus{
+    background-color:#f5f1f1;
+    border-radius: 5px;
+}
+
+.icon{
+    width: 15px;
+    height: 15px;
+}
+
+.drive-colored{
+    width: 50px;
+    height: 50px;
+    padding: 10px 30px;
+    border-right: 1px solid;
+}
+
+.icon-assignment, .icon-material{
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    background-color: #e6e6e6;
+    border-radius: 50%;
+}
+
+.material-title:hover, .assignment-title:hover{
+    background-color:#f5f1f1;
+}
+
+.material-title, .assignment-title{
+    height: 60px;
+    border-bottom: 1px solid #dadce0;
+}
+
+.topics{
+    padding-top: 35px;
+}
+
+.material, .assignment{
+    border-radius: 5px;
+}
+
+.material-footer-container, .assignment-footer-container{
+    border-top: 1px solid #dadce0;
+}
+
+.assignment-hide, .material-hide{
+    display: none;
+}
+
+.assignment-hide:hover, .material-hide:hover{
+    display: block;
+}
+
+.assignment-title:hover + .assignment-hide{
+    display: block;
+}
+
+.material-title:hover + .material-hide{
+    display: block;
+}
 
 *,
 *::before,
@@ -6,6 +158,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 Html,
 body {
   width: 100%;
@@ -285,79 +438,4 @@ a {
   to {
     left: 0%;
   }
-}
-
-
-
-.users-container{
-  margin: 24px;
-  width: 760px;
-  height: auto;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-.teachers h1{
-  font-weight: 400;
-  color: rgb(19,115,51);
-  width: 760px;
-  padding: 18px 16px;
-  border-bottom: 1px solid rgb(19,115,51);
-}
-
-.classmates-title{
-  width: 760px;
-  border-bottom: 1px solid rgb(19,115,51);
-}
-
-.student:nth-of-type(1){
-  border-top: none;
-}
- 
-
-
-.classmates-container .classmates-title h1{
-  font-weight: 400;
-  color: rgb(19,115,51);
-  margin-top: 35px;
-  padding: 18px 16px;
-  
-}
-
-.classmates-container .classmates-title p{
-  font-weight: 400;
-  color: rgb(19,115,51);
-  margin-top: 35px;
-  padding: 18px 16px ;
-}
-
-.department{
-  gap: 20px;
-  width: 760px;
-  padding: 20px 20px;
-}
-
-.teacher{
-  gap: 20px;
-  width: 760px;
-  border-top: 1px solid gray;
-  padding: 20px 20px;
-}
-.department img{
-  border-radius: 20px;
-}
-
-.teacher img{
-  border-radius: 20px;
-}
-
-.student{
-  gap: 20px;
-  width: 760px;
-  border-top: 1px solid gray;
-  padding: 20px 20px;
-}
-.student img{
-  border-radius: 20px;
 }
