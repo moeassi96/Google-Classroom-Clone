@@ -4,6 +4,19 @@ function displayAssignment(assignments) {
 
 	//Looping over assignments, then appending to assignments-container
 	assignments.forEach((assignment, index) => {
+
+
+        creator = assignment.user_firstname + " " + assignment.user_lastname + " posted a new assignment:"
+        title = assignment.assignment_name
+        date = assignment.assignment_date
+        description = assignment.assignment_description
+        attachmentCaption = 'Awesome',
+
+
+
+
+
+
 		assignmentsList.innerHTML += `<div class="assignment flex flex-col border" id="assignment-${index}">
         <div
             class="assignment-title color-black-light flex justify-center items-center justify-between"
@@ -23,14 +36,14 @@ function displayAssignment(assignments) {
                     class="assignment-name"
                     id="assignment-name"
                 >
-                    ${assignment.name}
+                    ${title}
                 </div>
 
                 <div
                     class="assignment-date"
                     id="assignment-date"
                 >
-                    ${assignment.date}
+                    ${date}
                 </div>
             </div>
 
@@ -49,7 +62,7 @@ function displayAssignment(assignments) {
                         class="assignment-description"
                         id="assignment-description"
                     >
-                        ${assignment.description}
+                        ${description}
                     </div>
 
                     <div
@@ -64,7 +77,7 @@ function displayAssignment(assignments) {
                             </div>
 
                             <div class="attachment-description color-black-light flex justify-self-start" id="attachment-description">
-                            ${assignment.attachmentCaption}
+                            ${attachmentCaption}
                             </div>
                         </a>
                     </div>
@@ -99,21 +112,25 @@ function displayAssignment(assignments) {
 
 
 window.addEventListener("load", async()=>{
-    displayAssignment([
-        {
-            name: 'uncle bob',
-            date: 'Monday',
-            description: 'hello brother',
-            attachmentCaption:
-                'Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome',
-        },
-        {
-            name: 'uncle bob',
-            date: 'Monday',
-            description: 'hello brother',
-            attachmentCaption: 'Awesome',
-        },
-    ]);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const class_id = urlParams.get('class_id');
+
+    const response = await fetch("http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getassignments.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({class_id}),
+          })
+          
+          
+          const assignments = await response.json();
+
+    
+          displayAssignment(assignments);
+
+
 })
 
 
@@ -122,8 +139,7 @@ window.addEventListener("load", async()=>{
 
 
 
-const urlParams = new URLSearchParams(window.location.search);
-const class_id = urlParams.get('class_id');
+
 
 const streambtn = document.getElementById("stream")
 const peoplebtn = document.getElementById("people")
