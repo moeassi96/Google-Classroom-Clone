@@ -91,21 +91,36 @@ function displayAssignment(assignments) {
 		});
 	});
 }
-displayAssignment([
-	{
-		name: 'uncle bob',
-		date: 'Monday',
-		description: 'hello brother',
-		attachmentCaption:
-			'Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome',
-	},
-	{
-		name: 'uncle bob',
-		date: 'Monday',
-		description: 'hello brother',
-		attachmentCaption: 'Awesome',
-	},
-]);
+
+
+
+
+
+
+
+window.addEventListener("load", async()=>{
+    displayAssignment([
+        {
+            name: 'uncle bob',
+            date: 'Monday',
+            description: 'hello brother',
+            attachmentCaption:
+                'Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome Awesome',
+        },
+        {
+            name: 'uncle bob',
+            date: 'Monday',
+            description: 'hello brother',
+            attachmentCaption: 'Awesome',
+        },
+    ]);
+})
+
+
+
+
+
+
 
 const urlParams = new URLSearchParams(window.location.search);
 const class_id = urlParams.get('class_id');
