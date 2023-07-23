@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="src/styles/utility.css" />
     <link rel="stylesheet" href="src/styles/classes-page.css" />
-    <link rel="stylesheet" href="src/styles/add-class.css">
+    <link rel="stylesheet" href="src/styles/add-class.css" />
     <title>Google Classroom Clone</title>
   </head>
 
@@ -33,11 +33,15 @@
         </div>
         <div class="right-part flex items-center">
           <div class="add-icon" id="add-icon">
-              <img src="src/assets/images/icons/add.svg" alt="add-icon" />
-              <div class="add-class-dropdown" id="add-class-dropdown">
-                <div class="add-class-dropdown-item" id="join-class">Join class</div>
-                <div class="add-class-dropdown-item" id="create-class">Create class</div>
+            <img src="src/assets/images/icons/add.svg" alt="add-icon" />
+            <div class="add-class-dropdown" id="add-class-dropdown">
+              <div class="add-class-dropdown-item" id="join-class">
+                Join class
               </div>
+              <div class="add-class-dropdown-item" id="create-class">
+                Create class
+              </div>
+            </div>
           </div>
           <div class="apps-account flex items-center">
             <div class="apps">
@@ -119,7 +123,7 @@
 
     <main>
       <!-- sidebar -->
-      <!-- <div class="sidebar flex flex-col items-center">
+      <div id="sidebar" class="sidebar flex flex-col items-center">
         <div class="sidebar-section">
           <div class="sidebar-item flex items-center">
             <div class="side-icon-container">
@@ -135,7 +139,7 @@
                 src="./src/assets/images/icons/calendar_today_grey.svg"
               />
             </div>
-            <span class="color-grey-medium">Classes</span>
+            <span class="color-grey-medium">Calendar</span>
           </div>
         </div>
 
@@ -151,7 +155,7 @@
             <span class="color-grey-medium">To do</span>
           </div>
 
-          <div class="sidebar-item flex items-center">
+          <div class="class-item sidebar-item flex items-center">
             <div class="side-icon-container">
               <div class="class-icon flex items-center justify-center br-50">
                 F
@@ -197,7 +201,7 @@
             <span class="color-grey-medium">Settings</span>
           </div>
         </div>
-      </div> -->
+      </div>
       <!-- end of sidebar -->
       <div class="sub-nav gap-15">
         <div class="sub-nav-element flex flex-col justify-center">

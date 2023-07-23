@@ -123,19 +123,5 @@ function signUpForm(step) {
     <div class="flex justify-between items-center btn">
       <a href="#" class="cancel">cancel</a>
     `;
-   
-        
-  }
-  
-}
-
-function signInForm(step){
-  switch (step) {
-    case 0:
-
-
-
-
-
   }
 }

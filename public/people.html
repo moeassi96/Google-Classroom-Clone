@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles/utility.css" />
+    <link rel="stylesheet" href="src/styles/people.css" />
+
+    <title>people</title>
+  </head>
+  <body>
+    <header>
+      <nav class="flex items-center">
+        <!-- In Class Navbar -->
+        <div class="flex items-center padding-left-lg">
+          <div>
+            <a href="#!">
+              <img src="src/assets/images/icons/menu.svg" alt="" />
+            </a>
+          </div>
+          <div class="left-part flex items-center">
+            <p>
+              FSW 23& 24 | Tech<br /><span class="section"
+                >Full Stack Web Development Bootcamp</span
+              >
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center grow justify-center gap-20">
+          <div class="tab" id="stream">Stream</div>
+          <div class="tab" id="classwork">Classwork</div>
+          <div class="tab active" id="people">People</div>
+        </div>
+        <div class="right-part flex items-center">
+          <div class="apps-account flex items-center">
+            <div class="apps">
+              <a href="#!">
+                <img src="src/assets/images/icons/apps.svg" alt="" />
+              </a>
+            </div>
+            <div class="account">
+              <a href="#!">
+                <img
+                  class="br-50"
+                  src="src/assets/images/defaults/default-user.png"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+       </main>
+      <div class="flex flex-col justify-start items-start users-container">
+        <div class="teachers">
+          <h1>Teachers</h1>
+          <div class="department flex items-center">
+            <img src="src/assets/images/defaults/default-user.png" />
+            <div>Tech Department</div>
+          </div>
+          <div id="teachers">
+            <div class="teacher flex items-center">
+              <img src="src/assets/images/defaults/default-user.png" />
+              <div>George Abdelnour</div>
+            </div>
+          </div>
+        </div>
+        <div class="classmates-container">
+          <div class="flex justify-between items-end classmates-title">
+            <h1>Classmates</h1>
+            <p><span id="student-count"></span> student</p>
+          </div>
+          <div id="students">
+            <div class="student flex items-center">
+              <img src="src/assets/images/defaults/default-user.png" />
+              <div>Mostafa Kreidly</div>
+            </div>
+            <div class="student flex items-center">
+              <img src="src/assets/images/defaults/default-user.png" />
+              <div>Mostafa Kreidly</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./src/components/people.js"></script>
+    <script src="./src/scripts/router.js"></script>
+    <script>
+      pages.load_page('people');
+    </script>
+  </body>
+</html>
