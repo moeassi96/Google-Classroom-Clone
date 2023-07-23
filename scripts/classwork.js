@@ -1,8 +1,10 @@
+// id="assignment-${index}"
+
 function displayAssignment(assignments){
     const assignmentsList = document.getElementById("assignments-container");
     assignmentsList.innerHTML = "";
-    assignments.forEach(assignment => {
-        assignmentsList.innerHTML += `<div class="assignment flex flex-col border" id="assignment">
+    assignments.forEach((assignment,index) => {
+        assignmentsList.innerHTML += `<div class="assignment flex flex-col border">
         <div
             class="assignment-title flex justify-center items-center justify-between"
             tabindex="1"
@@ -58,7 +60,7 @@ function displayAssignment(assignments){
                             class="attachment flex border gap-9 justify-center items-center justify-between"
                         >
                             <div class="attachment-drive-icon">
-                                <iframe id="assignment-link" src="${assignment.folder}" frameborder="0"></iframe>
+                            <img src="./public/src/assets/images/square-logo/google-drive-colored.svg" alt="drive-icon-colored" class="drive-icon-colored">
                             </div>
 
                             <div
@@ -80,10 +82,17 @@ function displayAssignment(assignments){
             </div>
         </div>
     </div>`
+    const element = document.getElementById(`assignment-${index}`)
+    element.addEventListener("click", () => {
+        element.classList.toggle("open-assignment")
+        console.log("hello")
+    })
     });
 }
 
 displayAssignment([
-    {name:"Uncle Bob",date:"Sunday",description:"Fearsome uncle bob",folder:"nothing to show"},
-    {name:"Uncle Bob strikes again",date:"Sunday",description:"Fearsome uncle bob",folder:"nothing to show"}
+    {name:"Uncle Bob",date:"Sunday",description:"Fearsome uncle bob"},
+    {name:"Uncle Bob strikes again",date:"Sunday",description:"Fearsome uncle bob"}
 ])
+
+
