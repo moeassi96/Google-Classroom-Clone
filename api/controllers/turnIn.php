@@ -11,7 +11,7 @@ $userid = $data['user_id'];
 $classid = $data['class_id'];
 $duedate = $data['submission_date'];
 $assignmentid=$data['assignment_id'];
-$status;
+
 
 $sql = 'insert into submissions(submission_url,user_id,class_id,submission_date,assignment_id) values(?,?,?,?,?)';
 $stmt = $mysqli->prepare($sql);
@@ -21,4 +21,4 @@ if($stmt->execute()){
 }else{
   $response['status']="failure" ;
 }
-echo(json_encode);
+echo(json_encode($response));
