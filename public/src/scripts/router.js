@@ -75,14 +75,19 @@ pages.load_page = async (page) => {
             return;
           } else {
             user.email = gmail.value;
+
             const res = await fetch(`${pages.base_url}/validateEmail.php`, {
               headers: {
                 'Content-Type': 'application/json',
               },
               method: 'POST',
-              body: JSON.stringify({ email: user.email }),
+              body: JSON.stringify({ recoveryEmail: user.email }),
             });
+            console.log("hi")
             const json = await res.json();
+            
+            console.log("hi")
+
             console.log(json.status);
             if (json.status === 'Email already exists') {
               gmail.nextElementSibling.innerHTML =
@@ -169,47 +174,6 @@ pages.load_page = async (page) => {
         }
         step++;
         content.innerHTML = signUpForm(step);
-      });
-    }
-    case 'people': {
-      const urlParams = new URLSearchParams(window.location.search);
-      const class_id = urlParams.get('class_id');
-      sideBar({})
-
-      const res = await fetch(
-        'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getteachers.php',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ class_id }),
-        }
-      );
-      const teachers = await res.json();
-
-      const res_students = await fetch(
-        'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getstudents.php',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ class_id }),
-        }
-      );
-      const students = await res_students.json();
-
-      displayUser(students, teachers);
-
-      const streambtn = document.getElementById('stream');
-      const classworkbtn = document.getElementById('classwork');
-
-      streambtn.addEventListener('click', () => {
-        window.location.href = `class.html?class_id=${class_id}`;
-      });
-      classworkbtn.addEventListener('click', () => {
-        window.location.href = `classwork.html?class_id=${class_id}`;
       });
     }
   }

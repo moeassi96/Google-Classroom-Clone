@@ -110,7 +110,7 @@ function addClass() {
 			};
 
 			const response = await fetch(
-				"http://localhost/fsw/Google-Classroom-Clone/api/controllers/createClass.php",
+				"http://localhost/google-clone/Google-Classroom-Clone/api/controllers/createClass.php",
 				{
 					method: "POST",
 					headers: {
@@ -143,7 +143,7 @@ async function joinClass(class_id, user_id) {
 	};
 
 	const response = await fetch(
-		"http://localhost/fsw/Google-Classroom-Clone/api/controllers/joinClass.php",
+		"http://localhost/google-clone/Google-Classroom-Clone/api/controllers/joinClass.php",
 		{
 			method: "POST",
 			headers: {
