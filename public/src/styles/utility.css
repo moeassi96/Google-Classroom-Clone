@@ -12,6 +12,9 @@
   --product-sans: 'Product Sans', Arial, Helvetica, sans-serif;
   --icon-blue: #2962ff;
 }
+button{
+  cursor: pointer;
+}
 /* font-colors */
 .color-green {
   color: var(--classroom-green);

@@ -83,9 +83,9 @@ function signUpForm(step) {
     
     <div class="form-input-container">
       
-         <input class="name-field" type="text" placeholder="Password" name="Password" id="password">
+         <input class="name-field" type="password" placeholder="Password" name="Password" id="password">
      
-         <input class="name-field" type="text" placeholder="Confirm Password" name="password2" id="password2">
+         <input class="name-field" type="password" placeholder="Confirm Password" name="password2" id="password2">
          <div class="error"></div>
 
     </div>

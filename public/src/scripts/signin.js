@@ -1,6 +1,19 @@
 window.addEventListener('load', () => {
   const signinbtn = document.getElementById('sign-in-btn');
 
+
+  const forgotPassword = document.getElementById("forgot-password");
+
+  forgotPassword.addEventListener("click",()=>{
+
+    window.location.href = "forgetpassword1.html"
+  })
+
+
+
+
+
+
   signinbtn.addEventListener('click', () => {
     const email = document.getElementById('email-input').value;
     const password = document.getElementById('password-input').value;
