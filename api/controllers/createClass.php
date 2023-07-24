@@ -77,6 +77,8 @@
         call_user_func_array(array($stmt, 'bind_param'), $paramTypeReferences);
 
         if ($stmt->execute()) {
+            $insertId = $mysqli->insert_id;
+            $response['insert_id'] = $insertId;
             $response['status'] = "Class Added Successfully";
         } else {
             $response['status'] = "Failed to insert class";
