@@ -1,0 +1,152 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight:500;
+}
+
+/* Styling header */
+.header{
+    border-bottom: 1px solid;
+    padding: 12px 0px 12px 0px;
+    flex: 1 1 0;
+}
+
+.header-title{
+    flex: 20 1 0;
+    font-size: 22px;
+}
+
+.close-icon, .header-icon, .assign-button-container{
+    flex: 1 1 0;
+}
+
+.assignment-icon{
+    background-color: #e6f4ea;
+    border-radius: 50%;
+    margin: 5px;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+.main-container{
+    flex: 15 1 0;
+}
+
+.left-container{
+    flex: 3 1 0;
+    background-color: #f8f9fa;
+}
+
+.right-container{
+    flex: 1 1 0;
+}
+
+/* Styling left container */
+
+.validation-message{
+    color: #ff0000;
+    font-size: small;
+}
+
+/* Styling upper section */
+.assignment-container{
+    background-color: #ffffff;
+    flex: 3 1 0;
+    border-radius: 10px;
+    border: 1px solid #d3d3d3;
+}
+
+.assignment-title-container{
+    border-bottom: 1px solid black;
+    flex: 1 1 0;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.assignment-title{
+    background-color: #f8f9fa;
+    border: none;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.assignment-details-container{
+    border-bottom: 1px solid black;
+    flex: 5 1 0;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.assignment-details{
+    background-color: #f8f9fa;
+    border: none;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 5px 5px 0px 0px;
+}
+
+/* Styling lower section */
+
+.attachments-container{
+    background-color: #ffffff;
+    flex: 2 1 0;
+    border-radius: 10px;
+    border: 1px solid #d3d3d3;
+}
+
+.file-upload-btn, .assign-button-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .file-upload-btn:hover, .assign-button-label:hover {
+    background-color: #3367d6;
+  }
+  
+  .attachments-file, .assign-button {
+    display: none;
+  }
+
+  .attachments-file-optional{
+    align-self: center;
+    padding: 10px;
+    color: grey;
+  }
+
+/* Styling right container */
+
+.class-assign-select{
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 5px;
+    color: #bbbbbb;
+}
+
+.due-date{
+    background-color: #f8f9fa;
+    border: none;
+    border-radius: 5px;
+    color: #bbbbbb;
+}
+
+
+
+
+
