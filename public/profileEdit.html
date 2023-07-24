@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Edit</title>
+    <link rel="stylesheet" href="src/styles/profileEdit.css" />
+    <link rel="stylesheet" href="src/styles/utility.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="flex">
+    <div class="left-container flex"></div>
+    <div class="main-container flex flex-col gap-20">
+      <div
+        class="welcome-container flex flex-col justify-center items-center gap-20 padding-lg"
+        id="welcome-container"
+      >
+        <div class="welcome-title" id="welcome-title">Personal Info</div>
+        <div class="welcome-caption" id="welcome-caption">
+          Info about you and your preferences across Google Classroom
+        </div>
+      </div>
+      <div
+        class="basic-info-container flex flex-col justify-center items-center gap-20"
+        id="basic-info-container"
+      >
+        <div
+          class="basic-info flex flex-col justify-center items-start gap-10"
+          id="basic-info"
+        >
+          <div class="basic-info-title" id="basic-info-title">Basic Info</div>
+          <div class="basic-info-caption" id="basic-info-caption">
+            Your contact info will be visible to others.
+          </div>
+        </div>
+        <div
+          class="basic-info-components flex flex-col"
+          id="basic-info-components"
+        >
+          <div class="name-container flex" id="name-container">
+            <div
+              class="name-label flex justify-start items-center"
+              id="name-label"
+            >
+              First
+            </div>
+            <div
+              class="name profile-input"
+              id="first-name"
+              contenteditable="false"
+            >
+              First
+              <!--name to be taken from database-->
+            </div>
+            <div class="edit flex justify-end items-end" id="edit-name">
+              <img
+                class="edit-icon flex justify-start items-center"
+                id="edit-icon-name"
+                alt="pen-icon"
+              />
+            </div>
+          </div>
+          <div class="name-container flex" id="name-container">
+            <div class="name-label flex justify-start items-center">Last</div>
+            <div
+              class="name profile-input"
+              id="last-name"
+              contenteditable="false"
+            >
+              last
+              <!--name to be taken from database-->
+            </div>
+            <div class="edit flex justify-end items-end" id="edit-last-name">
+              <img
+                class="edit-icon flex justify-start items-center"
+                id="edit-icon-name"
+                alt="pen-icon"
+              />
+            </div>
+          </div>
+
+          <div class="name-container flex" id="name-container">
+            <div
+              class="name-label flex justify-start items-center"
+              id="name-label"
+            >
+              Birthday
+            </div>
+            <input id="date" type="date" min="1930-01-01" max="2023-12-30" />
+
+            <div class="edit flex justify-end items-end" id="edit-name">
+              <img
+                class="edit-icon flex justify-center items-center"
+                id="edit-icon-name"
+                alt="pen-icon"
+              />
+            </div>
+          </div>
+          <!-- <div
+            class="birthday-container flex justify-start"
+            id="birthday-container"
+          >
+            <div
+              class="birthday-label flex justify-start items-center"
+              id="birthday-label"
+            >
+              Birthday
+            </div>
+          
+            <div class="edit flex justify-end items-end" id="edit-birthday">
+              <img
+                class="edit-icon flex justify-center items-center flex justify-center items-center"
+                id="edit-icon-birthday"
+                alt="pen-icon"
+              />
+            </div>
+          </div> -->
+          <div class="gender-container flex" id="gender-container">
+            <div class="gender-label flex justify-start items-center">
+              Gender
+            </div>
+            <div class="gender flex gap-20" id="gender">
+              <input
+                type="radio"
+                class="male"
+                id="male"
+                name="gender"
+                value="male"
+              />
+              <label for="male">Male</label>
+              <input
+                type="radio"
+                class="female"
+                id="female"
+                name="gender"
+                value="female"
+              />
+              <label for="female">Female</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="contact-info-container flex flex-col justify-start items-center gap-20"
+        id="contact-info-container"
+      >
+        <div
+          class="contact-info flex flex-col items-start gap-10"
+          id="contact-info"
+        >
+          <div class="contact-info-title" id="contact-info-title">
+            Contact Info
+          </div>
+          <div class="contact-info-caption" id="contact-info-caption">
+            Don't worry: your data are secured!
+          </div>
+        </div>
+        <div
+          class="contact-info-components flex flex-col"
+          id="contact-info-components"
+        >
+          <div class="email-container flex" id="email-container">
+            <div
+              class="email-label flex justify-start items-center"
+              id="email-label"
+            >
+              Email
+            </div>
+            <div class="email profile-input" id="email" contenteditable="false">
+              Old email
+              <!--email to be taken from database-->
+            </div>
+            <div class="edit flex justify-end items-end" id="edit-email">
+              <img
+                class="edit-icon flex justify-center items-center"
+                id="edit-icon-email"
+                alt="pen-icon"
+              />
+            </div>
+          </div>
+          <div class="password-container flex" id="password-container">
+            <div
+              class="password-label flex justify-start items-center"
+              id="password-label"
+            >
+              Password
+            </div>
+            <div
+              class="password profile-input"
+              id="password"
+              contenteditable="false"
+            >
+              It is a secret!
+              <!--password to be taken from database-->
+            </div>
+            <div class="edit flex justify-end items-end" id="edit-password">
+              <img
+                class="edit-icon flex justify-center items-center"
+                id="edit-icon-password"
+                alt="pen-icon"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="error" class="error"></div>
+      <button id="save-changes" class="save-changes">Save Changes</button>
+    </div>
+    <div class="right-container flex"></div>
+    <script src="src/scripts/profileEdit.js"></script>
+  </body>
+</html>

@@ -6,8 +6,6 @@ header("Content-Type: application/json");
 $data = json_decode(file_get_contents('php://input'), true);
 
 $user_id;
-
-const blabla = $data
 $params = array();
 $query = 'UPDATE users SET ';
 $paramTypes = '';
@@ -23,7 +21,7 @@ if (isset($data['email']) && !empty($data['email'])) {
     $paramValues[] = &$params['email'];
 }
 if (isset($data['password']) && !empty($data['password'])) {
-    $params['password'] = $data['password'];
+    $params['password'] =  password_hash($data['password'],PASSWORD_BCRYPT);
     $query .= 'user_password=?, ';
     $paramTypes .= 's';
     $paramValues[] = &$params['password'];
@@ -35,19 +33,19 @@ if (isset($data['firstname']) && !empty($data['firstname'])) {
     $paramValues[] = &$params['firstname'];
 }
 if (isset($data['lastname']) && !empty($data['lastname'])) {
-    $params['lastname'] = $data[''];
+    $params['lastname'] = $data['lastname'];
     $query .= 'user_lastname=?, ';
     $paramTypes .= 's';
     $paramValues[] = &$params['lastname'];
 }
-if (isset($data['']) && !empty($data[''])) {
+if (isset($data['birthdate']) && !empty($data['birthdate'])) {
     $params['birthdate'] = $data['birthdate'];
     $query .= 'user_birthdate=?, ';
     $paramTypes .= 's';
     $paramValues[] = &$params['birthdate'];
 }
 if (isset($data['gender']) && !empty($data['gender'])) {
-    $params['gender'] = $data['genderphonenumber'];
+    $params['gender'] = $data['gender'];
     $query .= 'user_gender=?, ';
     $paramTypes .= 's';
     $paramValues[] = &$params['gender'];

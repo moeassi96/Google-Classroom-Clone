@@ -1,0 +1,168 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+.error {
+  color: red;
+  font-size: small;
+}
+.main-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: 120vh;
+}
+
+.basic-info-container,
+.contact-info-container {
+  padding-top: 25px;
+  border: 1px solid #dadce0;
+  border-radius: 10px;
+}
+
+.basic-info-components,
+.contact-info-components,
+.basic-info,
+.contact-info {
+  width: 100%;
+}
+
+.basic-info,
+.contact-info {
+  padding: 10px;
+}
+
+.basic-info-title,
+.contact-info-title {
+  font-size: 22px;
+}
+
+.basic-info-caption,
+.contact-info-caption {
+  font-size: 14px;
+  color: #75797d;
+}
+
+.name-container,
+.birthday-container,
+.gender-container,
+.email-container,
+.password-container {
+  width: 100%;
+  padding: 20px;
+  border: 0px solid #dadce0;
+  border-top: 1px solid #dadce0;
+}
+
+.name-container:hover,
+.birthday-container:hover,
+.gender-container:hover,
+.email-container:hover,
+.password-container:hover {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #dadce0;
+  background-color: #f9fbfc;
+}
+
+.name-label,
+.birthday-label,
+.gender-label,
+.email-label,
+.password-label,
+.edit-name {
+  flex: 1 1 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #75797d;
+}
+
+.edit {
+  width: 40px;
+  margin-left: 10px;
+}
+
+.edit-icon {
+  content: url(../assets/images/square-logo/pen.jpeg);
+  vertical-align: middle;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.save {
+  content: url(../assets/images/square-logo/save.jpeg);
+  vertical-align: middle;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.name,
+.birthday,
+.gender,
+.email,
+.password {
+  flex: 5 1 0;
+  font-size: 16px;
+  padding: 0.5rem 1rem;
+}
+
+.new-value {
+  border-radius: 5px;
+  /* padding: 1px 0px 1px 10px; */
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border: 1px solid #a7a6a6;
+  color: #a7a6a6;
+}
+
+.birthday-label {
+  padding: 0rem 2rem;
+}
+.date {
+  padding: 0.5rem 1rem;
+
+  margin-right: 2rem;
+  width: 300px;
+}
+.right-container,
+.left-container {
+  flex: 1 1 0;
+}
+
+.main-container {
+  flex: 3 1 0;
+}
+
+.welcome-title {
+  font-size: 28px;
+}
+
+.welcome-caption {
+  font-size: 16px;
+  color: #75797d;
+}
+
+.save-changes {
+  appearance: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #2962ff;
+  color: white;
+  outline: none;
+  width: fit-content;
+}
