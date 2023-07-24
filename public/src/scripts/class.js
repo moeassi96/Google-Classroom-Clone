@@ -39,7 +39,7 @@ async function getClassDetails() {
 	const class_id = urlParams.get("class_id");
 
 	const response = await fetch(
-		"http://localhost/fsw/Google-Classroom-Clone/api/controllers/getSingleClass.php",
+		"http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getSingleClass.php",
 		{
 			method: "POST",
 			headers: {
@@ -80,7 +80,7 @@ window.addEventListener("load", async () => {
 
 	// getting role of user in this class
 	const roleresponse = await fetch(
-		"http://localhost/fsw/Google-Classroom-Clone/api/controllers/role.php",
+		"http://localhost/google-clone/Google-Classroom-Clone/api/controllers/role.php",
 		{
 			method: "POST",
 			headers: {
@@ -104,7 +104,7 @@ window.addEventListener("load", async () => {
 	});
 
 	const response = await fetch(
-		"http://localhost/fsw/Google-Classroom-Clone/api/controllers/getassignments.php",
+		"http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getassignments.php",
 		{
 			method: "POST",
 			headers: {
