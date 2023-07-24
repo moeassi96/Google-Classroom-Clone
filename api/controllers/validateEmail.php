@@ -5,23 +5,23 @@ include('connection.php');
 header("Content-Type: application/json");
 $data = json_decode(file_get_contents('php://input'), true);
 
-$recoveryEmail = $data['recoveryEmail'];
+$email = $data['email'];
 
 
-function isValidEmail($recoveryEmail) {
+function isValidEmail($email) {
     $pattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
 
-    if (preg_match($pattern, $recoveryEmail)) {
+    if (preg_match($pattern, $email)) {
         return true;
     } else {
         return false;
     }
 }
 
-if (isValidEmail($recoveryEmail)) {
+if (isValidEmail($email)) {
     
     $check_email = $mysqli->prepare('select user_email from users where user_email=?');
-    $check_email->bind_param('s', $recoveryEmail);
+    $check_email->bind_param('s', $email);
     $check_email->execute();
     $check_email->store_result();
 
