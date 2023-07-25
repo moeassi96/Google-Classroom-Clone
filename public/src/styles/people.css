@@ -355,3 +355,12 @@ a {
 .student img {
   border-radius: 20px;
 }
+
+.add-user{
+  background-color: #1A73E8;
+  border-radius: 4px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
