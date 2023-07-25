@@ -33,17 +33,22 @@
           </div>
         </div>
       </div>
-  </nav>
-  <div class="flex page-container gap-20">
+    </nav>
+    <hr class="nav-hr" />
+  <div class="flex page-container items-start gap-20">
+    <div class="assignment-icon flex items-center justify-center">
+      <img src="src/assets/images/icons/assignment-white.svg" alt="">
+    </div>
     <div class="flex flex-col assignment-info gap-20">
-  
-      <div class="flex flex-col gap-9">
-        <h1>UI/UX design: creating your project idea brief</h1>
-        <p>Julien Hosri.Jul 11 (Edited Jul 11)</p>
-      </div>  
-      <div class="flex justify-between date-grade">
-        <div class="grade">100 points</div>
-        <div class="date">Due Jul 11, 11:59 PM</div>
+      <div class="assignment-hero">
+        <div class="flex flex-col gap-9">
+          <h1 class="assignment-title" id="assignment-title">Google Classroom Clone</h1>
+          <p class="assignment-teacher-date">Julien Hosri • Jul 11 (Edited Jul 11)</p>
+        </div>  
+        <div class="flex justify-between date-grade">
+          <div class="grade">100 points</div>
+          <div class="date">Due Jul 11, 11:59 PM</div>
+        </div>
       </div>
         <div class="flex flex-col gap-20 info">
           <p>Now that you have chosen your final project ideas, the next step is to create an idea brief for each of your projects using Google Docs.
@@ -55,40 +60,31 @@
               Write a concise and clear description of your project. This should include what the project is about, its purpose, the problem it is trying to solve, and how it intends to solve it.</li>
               <li>
                 Target Audience:
-    Identify the general group of people who are intended to use your application. While a user persona is not required at this stage, you should at least know the age range, occupations, and other general characteristics of your prospective users.
-              </li>
-              <li>
-                User Types:
-    Enumerate the different types of users who will be interacting with your app. For example, in a medical app, there might be patients and doctors as separate user types.
-              </li>
-              <li>
-                Features of the App:
-    For each user type, list the features of the app in user stories form. A user story is a simple way to capture a description of a product feature from an end-user perspective. An example would be: "As a [User Type], I want [the feature or functionality] so that [reason/benefit]."
-              </li>
-              <li>
-                Additional Information:
-    Include any other details that might help me understand the app better. This could include the unique selling proposition, key differentiators, competitor analysis, potential challenges, etc.
+                Identify the general group of people who are intended to use your application. While a user persona is not required at this stage, you should at least know the age range, occupations, and other general characteristics of your prospective users.
               </li>
           </ul>
           <p>Upon completion, please share your Google Doc with me by providing access  (email: julien@sefactory.io). Ensure the sharing settings allow me to edit the document. Submit the link in Google Classroom under the appropriate assignment by midnight tonight.</p>
           <p>I am looking forward to seeing your innovative ideas. If you have any questions or concerns regarding this assignment, please feel free to reach out in the comment section of this post.</p>
     
         </div>
-        <div>Class comments</div>
-        <input placeholder="Add class comment..." class="class-comment">
+        <hr class="comments-hr">
+        <div class="class-comment-container">
+          <div>Class comments</div>
+          <input placeholder="Add class comment..." class="class-comment">
+        </div>
     </div>
 
     <div class="flex flex-col turnin-comment-boxes gap-10">
       <div class="flex flex-col status-turnin-assignment gap-9">
-        <div class="flex justify-between assignment-status">
+        <div class="flex justify-between">
           <div>Your work</div>
-          <div>Assigned</div>
+          <div class="assignment-status" id="assignment-status">Assigned</div>
         </div>
         
           <button class="add" id="add">+ Add or create</button>
           <div class="inputs" id="inputs">
             <input type="url" placeholder="Enter a link" id="url-link">
-            <input type="file">
+            <input type="file" name="submission_attachment" id="submission_attachment">
           </div>
       
         <button class="done" id="done">Mark as done</button>
