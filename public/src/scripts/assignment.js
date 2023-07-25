@@ -12,32 +12,6 @@ const submission_attachment = document.getElementById("submission_attachment");
 
 window.addEventListener("load",async()=>{
 
-  const check_status = {
-    user_id,
-    assignment_id
-  }
-
-  const status_response = await fetch (
-    'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getSubmissionsStatus.php',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(check_status),
-    }
-  )
-
-  const assignment_current_status = await status_response.json();
-  if(assignment_current_status[0].status === "Turned in" || assignment_current_status[0].status === "Turned in Late" || assignment_current_status[0].status === "Missing"){
-    create_files.disabled = true
-    submit_button.disabled = true
-    submit_button.innerText = "Turned in"
-    assignment_status.innerText = assignment_current_status[0].status
-  }else{
-
-  }
-
   const formData = new FormData();
   formData.append('assignment_id', assignment_id);
 
@@ -56,7 +30,33 @@ window.addEventListener("load",async()=>{
   document.getElementById("grade").innerText= `Points: ${assignment.assignment_points}`
   document.getElementById("duedate").innerText= `Due: ${assignment.assignment_duedate}`
   document.getElementById("assignment_paragraph").innerText= assignment.assignment_paragraph
-  
+
+  const check_status = {
+    user_id,
+    assignment_id
+  }
+
+  const status_response = await fetch (
+    'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getSubmissionsStatus.php',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(check_status),
+    }
+  )
+
+  const assignment_current_status = await status_response.json();
+  if(assignment_current_status){
+    if(assignment_current_status[0].status === "Turned in" || assignment_current_status[0].status === "Turned in Late" || assignment_current_status[0].status === "Missing"){
+      create_files.disabled = true
+      submit_button.disabled = true
+      submit_button.innerText = "Turned in"
+      assignment_status.innerText = assignment_current_status[0].status
+    }
+  }
+
 
 })
 
