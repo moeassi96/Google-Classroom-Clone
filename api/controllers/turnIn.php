@@ -1,9 +1,6 @@
 <?php
   include('connection.php');
 
-  // header("Content-Type: application/json");
-  // $_POST = json_decode(file_get_contents('php://input'), true);
-
   if(isset($_POST['class_id']) && $_POST['class_id'] != ''){
     $classid = $_POST['class_id'];
   }
@@ -20,6 +17,11 @@
     $link = $_POST['submission_url'];
   }
 
+  if(isset($_POST['assignment_status']) && $_POST['assignment_status'] != ''){
+    $status = $_POST['assignment_status'];
+  }
+  
+
   if(isset($_FILES["fileInput"]) && $_FILES["fileInput"]["error"] === UPLOAD_ERR_OK){
     $targetDir = "../../public/src/assets/images/submissions/";
     $targetFile = $targetDir . basename($_FILES["fileInput"]["name"]);
@@ -35,13 +37,28 @@
     $submission_date = $_POST['submission_date'];
   }
 
-  
-
-  $query = 'insert into submissions(class_id, user_id, assignment_id, submission_url, submission_date) values(?,?,?,?,?)';
+  $query = 'insert into submissions(class_id, user_id, assignment_id, submission_url, status, submission_date) values(?,?,?,?,?,?)';
   $stmt = $mysqli->prepare($query);
-  $stmt->bind_param("sssss", $classid, $userid, $assignmentid, $link, $submission_date, );
+  $stmt->bind_param("ssssss", $classid, $userid, $assignmentid, $link, $status, $submission_date, );
   if($stmt->execute()){
     $response['status']="success";
+    $submission_id = $mysqli->insert_id;
+    $due_date = $mysqli -> query("SELECT assignment_duedate FROM assignments WHERE assignment_id = $assignmentid");
+    if ($due_date){
+      $row = $due_date->fetch_assoc();
+      $current_due_date = $row['assignment_duedate'];
+
+      if($submission_date < $current_due_date){
+        $result = $mysqli -> query("UPDATE `submissions` SET `status` = 'Turned in' WHERE `submissions`.`submissions_id` = $submission_id;");
+        $response['submission_status']="Turned in";
+      }
+      else{
+        $result = $mysqli -> query("UPDATE `submissions` SET `status` = 'Turned in Late' WHERE `submissions`.`submissions_id` = $submission_id;");
+        $response['submission_status']="Turned in Late";
+      }
+
+    }
+    
   }else{
     $response['status']="failure" ;
   }
