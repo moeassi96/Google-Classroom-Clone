@@ -83,10 +83,10 @@ pages.load_page = async (page) => {
               method: 'POST',
               body: JSON.stringify({ recoveryEmail: user.email }),
             });
-            console.log("hi")
+            console.log('hi');
             const json = await res.json();
-            
-            console.log("hi")
+
+            console.log('hi');
 
             console.log(json.status);
             if (json.status === 'Email already exists') {
@@ -111,7 +111,7 @@ pages.load_page = async (page) => {
 
             if (!password_regex.test(password.value)) {
               password2.nextElementSibling.innerHTML =
-                'Password should be 8 characters long, and contains atleast 1 capital, 1 small, 1 digit and 1 special character';
+                ' Password must be 8 characters long and include at least 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special character';
               return;
             } else {
               user.password = password.value;
@@ -170,7 +170,8 @@ pages.load_page = async (page) => {
 
           window.location.href = 'signin.html';
 
-          console.log(json.status);
+          json.status;
+          console.log;
         }
         step++;
         content.innerHTML = signUpForm(step);

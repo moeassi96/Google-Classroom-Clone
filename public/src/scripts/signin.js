@@ -1,18 +1,11 @@
 window.addEventListener('load', () => {
   const signinbtn = document.getElementById('sign-in-btn');
 
+  const forgotPassword = document.getElementById('forgot-password');
 
-  const forgotPassword = document.getElementById("forgot-password");
-
-  forgotPassword.addEventListener("click",()=>{
-
-    window.location.href = "forgetpassword1.html"
-  })
-
-
-
-
-
+  forgotPassword.addEventListener('click', () => {
+    window.location.href = 'forgetpassword1.html';
+  });
 
   signinbtn.addEventListener('click', () => {
     const email = document.getElementById('email-input').value;
@@ -39,7 +32,7 @@ window.addEventListener('load', () => {
         console.log(data.status);
 
         if (data.status === 'user not found') {
-          document.getElementById('invalid-email').innerText = 'invalid-email';
+          document.getElementById('invalid-email').innerText = 'Invalid email';
         } else if (data.status === 'logged in') {
           localStorage.setItem('user_id', data.user_id);
 
@@ -47,7 +40,7 @@ window.addEventListener('load', () => {
         } else {
           document.getElementById('invalid-email').innerText = '';
           document.getElementById('invalid-password').innerText =
-            'Wrong password';
+            'Invalid password';
         }
       })
       .catch((error) => console.log(error));

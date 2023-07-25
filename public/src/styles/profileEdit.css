@@ -10,12 +10,13 @@ html,
 body {
   width: 100%;
   height: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Product Sans', 'Noto Sans Myanmar UI', arial, sans-serif;
 }
 .error {
   color: red;
   font-size: small;
 }
+
 .main-container {
   padding-top: 50px;
   padding-bottom: 50px;

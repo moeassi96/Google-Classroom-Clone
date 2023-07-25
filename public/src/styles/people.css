@@ -9,13 +9,18 @@ Html,
 body {
   width: 100%;
   height: 100%;
-  font-family: var(--product-sans);
+  font-family: 'Product sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
 }
-
+.teacher,
+.student {
+  color: var(--grey-light);
+  font-weight: 400;
+}
 nav {
   height: 64px;
 }
-
 .left-part {
   padding-left: 16px;
 }
@@ -302,7 +307,9 @@ a {
   padding: 18px 16px;
   border-bottom: 1px solid rgb(19, 115, 51);
 }
-
+.teacher:first-child {
+  border-top: none;
+}
 .classmates-title {
   width: 760px;
   border-bottom: 1px solid rgb(19, 115, 51);
@@ -356,8 +363,9 @@ a {
   border-radius: 20px;
 }
 
-.add-user{
-  background-color: #1A73E8;
+.add-user {
+  color: white;
+  background-color: #1a73e8;
   border-radius: 4px;
   padding: 12px 24px;
   border: none;
