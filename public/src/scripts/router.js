@@ -159,7 +159,7 @@ pages.load_page = async (page) => {
             birthdate: user.birthdate,
           };
           console.log(JSON.stringify(toadd));
-          const res = await fetch(`${pages.base_url}/signUp.php`, {
+          const res = await fetch(`${pages.base_url}signUp.php`, {
             headers: {
               'Content-Type': 'application/json',
             },
