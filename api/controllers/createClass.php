@@ -37,13 +37,6 @@
         $paramValues[] = &$params['class_subject'];
     }
 
-    if (isset($data['class_room']) && !empty($data['class_room'])) {
-        $params['class_room'] = $data['class_room'];
-        $query .= 'class_room, ';
-        $paramTypes .= 's';
-        $paramValues[] = &$params['class_room'];
-    }
-
     if (isset($data['class_link']) && !empty($data['class_link'])) {
         $params['class_link'] = $data['class_link'];
         $query .= 'class_link, ';

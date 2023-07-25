@@ -33,7 +33,7 @@ create_class_button_cancel.addEventListener("click", () => {
 const class_name_input = document.getElementById("create-class-name");
 const class_section_input = document.getElementById("create-class-section");
 const class_subject_input = document.getElementById("create-class-subject");
-const class_room_input = document.getElementById("create-class-room");
+const class_meeting_link_input = document.getElementById("class-meeting-link-input");
 
 function inputAnimation(input) {
 	input.addEventListener("click", () => {
@@ -53,13 +53,13 @@ function inputAnimation(input) {
 inputAnimation(class_name_input);
 inputAnimation(class_section_input);
 inputAnimation(class_subject_input);
-inputAnimation(class_room_input);
+inputAnimation(class_meeting_link_input);
 
 function emptyCreateClassInputs() {
 	class_name_input.value = "";
 	class_section_input.value = "";
 	class_subject_input.value = "";
-	class_room_input.value = "";
+	class_meeting_link_input.value = "";
 }
 
 function resetCreateClassInputs() {
@@ -73,7 +73,7 @@ function resetCreateClassInputs() {
 	class_subject_input.parentElement.parentElement
 		.querySelector(".create-class-placeholder")
 		.classList.remove("create-class-placeholder-enabled");
-	class_room_input.parentElement.parentElement
+	class_meeting_link_input.parentElement.parentElement
 		.querySelector(".create-class-placeholder")
 		.classList.remove("create-class-placeholder-enabled");
 }
@@ -106,7 +106,7 @@ function addClass() {
 				class_name: class_name_input.value,
 				class_section: class_section_input.value,
 				class_subject: class_subject_input.value,
-				class_room: class_room_input.value,
+				meeting_link: class_meeting_link_input.value,
 			};
 
 			const response = await fetch(
