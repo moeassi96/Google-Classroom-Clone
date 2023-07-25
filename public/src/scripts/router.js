@@ -76,7 +76,7 @@ pages.load_page = async (page) => {
           } else {
             user.email = gmail.value;
 
-            const res = await fetch(`${pages.base_url}/validateEmail.php`, {
+            const res = await fetch(`${pages.base_url}validateEmail.php`, {
               headers: {
                 'Content-Type': 'application/json',
               },

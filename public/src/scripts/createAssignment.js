@@ -3,7 +3,7 @@ window.onload = async function () {
     const dueDateInput = document.getElementById('due-date');
     const formattedCurrentDate = currentDate.toISOString().slice(0, 10); // Format the current date as YYYY-MM-DD
     dueDateInput.setAttribute('min', formattedCurrentDate);
-    const fetchClasses = await fetch('http://localhost/fsw/Google-Classroom-Clone/api/controllers/myclasses.php', {
+    const fetchClasses = await fetch('http://localhost/google-clone/Google-Classroom-Clone/api/controllers/myclasses.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ async function handleAssignButton() {
         // attachments,
     };
 
-    const postAssignment = await fetch('http://localhost/fsw/Google-Classroom-Clone/api/controllers/createAssignment.php', {
+    const postAssignment = await fetch('http://localhost/google-clone/Google-Classroom-Clone/api/controllers/createAssignment.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

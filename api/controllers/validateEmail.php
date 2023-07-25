@@ -5,7 +5,7 @@ include('connection.php');
 header("Content-Type: application/json");
 $data = json_decode(file_get_contents('php://input'), true);
 
-$email = $data['email'];
+$email = $data['recoveryEmail'];
 
 
 function isValidEmail($email) {

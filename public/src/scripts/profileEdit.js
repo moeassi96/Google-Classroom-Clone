@@ -18,6 +18,7 @@ window.addEventListener("load", async () => {
 
   const { firstname, lastname, birthdate,gender, email } = user_info;
 
+
   const save_changes = document.getElementById("save-changes");
   const editName = document.getElementById("edit-name");
   const editLastName = document.getElementById("edit-last-name");
