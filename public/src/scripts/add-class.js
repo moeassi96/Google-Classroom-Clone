@@ -121,9 +121,7 @@ function addClass() {
 			);
 
 			const response_details = await response.json();
-			console.log(response_details);
 			if (response_details.status == "Class Added Successfully") {
-				console.log(response_details.status);
 				resetCreateClassInputs();
 				create_class_container.classList.remove(
 					"create-class-container-show"
@@ -154,9 +152,7 @@ async function joinClass(class_id, user_id) {
 	);
 
 	const response_details = await response.json();
-	console.log(response_details);
 	if (response_details.status == "Joined Successfully") {
-		console.log(response_details.status);
 		window.location.reload();
 	}
 }

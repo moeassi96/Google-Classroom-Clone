@@ -1,49 +1,43 @@
 const sideBarClass = (element) => {
-  return ` <div class="class-item sidebar-item flex items-center">
+	return ` <div class="class-item sidebar-item flex items-center">
   <div class="side-icon-container">
     <div class="class-icon flex items-center justify-center br-50">
-     ${element.title.charAt(0).toUpperCase()}
+     ${element.class_name.charAt(0).toUpperCase()}
     </div>
   </div>
   <div class="class-details flex flex-col">
-    <span class="class-title color-grey-medium">${element.title}</span>
+    <span class="class-title color-grey-medium">${element.class_name}</span>
     <div class="class-description">
-     ${element.description}
+     ${element.class_subject}
     </div>
   </div>
 </div>
  `;
 };
-//Local storage, expecting: {enrolled:[{title,description}], teaching:[]}
 
+const user_id = localStorage.getItem("user_id");
 
-  // const user_id = localStorage.getItem('user_id');
-  // console.log(user_id);
-  
-
-
- 
 async function sideBar() {
-    const user_id = 16;
-  const user = {
-    user_id: user_id,
-  };
-  const response = await fetch(
-  'http:\\localhost\Google-Classroom-Clone\api\controllers\myclasses.php',
-  {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(user),
-  }
-  );  
-  const classes = await response.json();
-  const sideBar = document.getElementById("sidebar");
-  const button = document.getElementById("hamburger");
-  console.log(button)
-  if (!sideBar) return;
-  sideBar.innerHTML = `<div id="close-sidebar" class="close-sidebar"></div>
+	const user = {
+		user_id: user_id,
+	};
+	const response = await fetch(
+		"http://localhost/google-clone/Google-Classroom-Clone/api/controllers/myclasses.php",
+
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(user),
+		}
+	);
+	const classes = await response.json();
+	const sideBar = document.getElementById("sidebar");
+	const button = document.getElementById("hamburger");
+	//console.log(button)
+	if (!sideBar) return;
+	sideBar.innerHTML = `<div id="close-sidebar" class="close-sidebar"></div>
   <div class="sidebar-section">
       <div class="sidebar-item flex items-center">
         <div class="side-icon-container">
@@ -86,36 +80,26 @@ async function sideBar() {
       </div>
     </div>
   `;
-  const close_sidebar = document.getElementById("close-sidebar");
-  button.addEventListener("click", () => {
-    console.log("clicked");
-    sideBar.classList.add("show-sidebar");
-    close_sidebar.style.width = "100vw";
-  });
-  close_sidebar.addEventListener("click", () => {
-    sideBar.classList.remove("show-sidebar");
-    close_sidebar.style.width = "0";
-  });
+	const close_sidebar = document.getElementById("close-sidebar");
+	button.addEventListener("click", () => {
+		//console.log("clicked");
+		sideBar.classList.add("show-sidebar");
+		close_sidebar.style.width = "100vw";
+	});
+	close_sidebar.addEventListener("click", () => {
+		sideBar.classList.remove("show-sidebar");
+		close_sidebar.style.width = "0";
+	});
 
-  const teaching = document.getElementById("teaching");
-  const enrolled = document.getElementById("enrolled");
-  console.log(classes);
-  classes.forEach(element => {
-    console.log(element);
-  });
-  if(classes.role=="teacher"){
-    teaching.innerHTML += sideBarClass(classes.class_name);
-  };
-  if(classes.role=="student"){
-    enrolled.innerHTML += sideBarClass(classes.class_name);
-  };
-  // if (!classes.enrolled) return;
-  // classes.enrolled.forEach((element) => {
-  //   // const enrolled = document.getElementById("enrolled");
-  //   enrolled.innerHTML += sideBarClass(element);
-  // });
-  // if (!classes.teaching) return;
-  // classes.teaching.forEach((element) => {
-  //   teaching.innerHTML += sideBarClass(element);
-  // });
+	const teaching = document.getElementById("teaching");
+	const enrolled = document.getElementById("enrolled");
+	//console.log(classes);
+	classes.forEach((element) => {
+		if (element.role == "teacher") {
+			teaching.innerHTML += sideBarClass(element);
+		}
+		if (element.role == "student") {
+			enrolled.innerHTML += sideBarClass(element);
+		}
+	});
 }
