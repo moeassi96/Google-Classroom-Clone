@@ -79,7 +79,7 @@ function resetCreateClassInputs() {
 }
 
 function manageCreateButton() {
-	class_name_input.addEventListener("change", () => {
+	class_name_input.addEventListener("input", () => {
 		if (class_name_input.value === "") {
 			create_class_button_create.disabled = true;
 		} else {
