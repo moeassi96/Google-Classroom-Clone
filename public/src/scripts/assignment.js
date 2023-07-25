@@ -1,9 +1,42 @@
 const urlParams = new URLSearchParams(window.location.search);
 const assignment_id = urlParams.get("assignment_id");
 const class_id = urlParams.get("class_id");
-// const user_id = localStorage.getItem('user_id');
+
+const assignment_status = document.getElementById("assignment-status")
+const create_files=document.getElementById("add");
+const inputs_form=document.getElementById("inputs-form");
+const info_input=document.getElementById("inputs");
+const submit_button=document.getElementById("done");
+const link=document.getElementById("url-link");
+const submission_attachment = document.getElementById("submission_attachment");
 
 window.addEventListener("load",async()=>{
+
+  const check_status = {
+    user_id,
+    assignment_id
+  }
+
+  const status_response = await fetch (
+    'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getSubmissionsStatus.php',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(check_status),
+    }
+  )
+
+  const assignment_current_status = await status_response.json();
+  if(assignment_current_status[0].status === "Turned in" || assignment_current_status[0].status === "Turned in Late" || assignment_current_status[0].status === "Missing"){
+    create_files.disabled = true
+    submit_button.disabled = true
+    submit_button.innerText = "Turned in"
+    assignment_status.innerText = assignment_current_status[0].status
+  }else{
+
+  }
 
   const formData = new FormData();
   formData.append('assignment_id', assignment_id);
@@ -23,7 +56,7 @@ window.addEventListener("load",async()=>{
   document.getElementById("grade").innerText= `Points: ${assignment.assignment_points}`
   document.getElementById("duedate").innerText= `Due: ${assignment.assignment_duedate}`
   document.getElementById("assignment_paragraph").innerText= assignment.assignment_paragraph
-
+  
 
 })
 
@@ -37,26 +70,27 @@ function getCurrentDate() {
   return currentDate.toISOString();
 }
 
-const create_files=document.getElementById("add");
-const inputs_form=document.getElementById("inputs-form");
-const info_input=document.getElementById("inputs");
-const turn_files=document.getElementById("done");
-const link=document.getElementById("url-link");
-const submission_attachment = document.getElementById("submission_attachment");
-
 link.addEventListener("input", () => {
-  if(link.value.length > 0)
-    turn_files.innerText = "Turn in"
-  else
-    turn_files.innerText = "Mark as done"
+  if(link.value.length > 0){
+    submit_button.innerText = "Turn in"
+    submission_attachment.disabled = true
+  }
+  else{
+    submit_button.innerText = "Mark as done"
+    submission_attachment.disabled = false
+  }
 })
 
 
 submission_attachment.addEventListener("input", () => {
-  if(submission_attachment.files.length > 0)
-    turn_files.innerText = "Turn in"
-  else
-    turn_files.innerText = "Mark as done"
+  if(submission_attachment.files.length > 0){
+    link.disabled = true
+    submit_button.innerText = "Turn in"
+  }
+  else{
+    link.disabled = false
+    submit_button.innerText = "Mark as done"
+  }
 })
 
 create_files.addEventListener('click',()=>{
@@ -69,7 +103,7 @@ inputs_form.addEventListener("submit", async (e) => {
 
   e.preventDefault();
 
-  if(turn_files.innerText === "Turn in"){
+  if(submit_button.innerText === "Turn in"){
 
     const formData = new FormData();
     formData.append("fileInput", submission_attachment.files[0])
@@ -91,7 +125,7 @@ inputs_form.addEventListener("submit", async (e) => {
       console.log(responseDetails)
 
       if(responseDetails['status'] = "success"){
-        turn_files.innerText = "Turned in"
+        submit_button.innerText = "Turned in"
       }
 
     } catch (error) {
@@ -99,7 +133,7 @@ inputs_form.addEventListener("submit", async (e) => {
     }
 
   }
-  else if(turn_files.innerText === "Mark as done"){
+  else if(submit_button.innerText === "Mark as done"){
 
 
     const formData = new FormData();
@@ -120,7 +154,8 @@ inputs_form.addEventListener("submit", async (e) => {
       const responseDetails = await response.json();
       
       if(responseDetails['status'] = "success"){
-        turn_files.innerText = "Turned in"
+        info_input.classList.add("inputs");
+        submit_button.innerText = "Turned in"
       }
 
     } catch (error) {
