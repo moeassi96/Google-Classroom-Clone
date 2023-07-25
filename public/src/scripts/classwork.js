@@ -1,3 +1,5 @@
+const role = "teacher";
+
 function displayAssignment(assignments) {
   const assignmentsList = document.getElementById('assignments-container');
   assignmentsList.innerHTML = '';
@@ -131,3 +133,24 @@ window.addEventListener('load', async () => {
     window.location.href = `people.html?class_id=${class_id}`;
   });
 });
+
+function modifyPersonalLinkDiv(){
+  console.log("modify")
+  const PL = document.getElementById("personal-link");
+  if (role == "teacher"){
+    PL.innerHTML = '<div class="add-assignment flex justify-start gap-9" id="add-assignment"><label for="add-assignment-btn" class="add-assignment-btn-label" id="add-assignment-btn-label">Assign</label><button class="add-assignment-btn" id="add-assignment-btn"></button> </div>'
+    const urlParams = new URLSearchParams(window.location.search);
+    const class_id = urlParams.get('class_id');
+    const addAssign = document.getElementById("add-assignment-btn-label");
+    addAssign.addEventListener('click',() => {
+      window.location.href = `createassign.html?class_id=${class_id}`;
+    })
+  }
+  else{
+    PL.innerHTML = '<img class="link-icon" src="src/assets/images/square-logo/assignment_ind.svg" alt="individual-icon" /><span class="view-work flex justify-center items-center">View your work</span>'
+  }
+}
+
+window.onload = function () {
+  modifyPersonalLinkDiv();
+  }

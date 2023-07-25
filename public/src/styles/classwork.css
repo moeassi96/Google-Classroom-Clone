@@ -235,6 +235,25 @@ nav {
 	border-bottom: 4px solid var(--black-dark);
 }
 
+.add-assignment-btn-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-assignment-btn-label:hover, .add-assignment-btn-label:hover {
+    background-color: #3367d6;
+  }
+
+  .add-assignment-btn {
+    display: none;
+  }
+
 a {
 	display: inherit;
 	text-decoration: none;
