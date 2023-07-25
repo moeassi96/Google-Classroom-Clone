@@ -67,7 +67,7 @@ window.addEventListener("load", async () => {
   const inviteBtn = document.getElementById("invite");
 
   inviteBtn.addEventListener("click", () => {
-    window.location.href = `class.html?class_id=${class_id}`;
+    window.location.href = `invite.html?class_id=${class_id}`;
   });
 
 
