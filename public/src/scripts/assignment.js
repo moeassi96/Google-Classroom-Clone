@@ -1,60 +1,9 @@
-function getCurrentDate() {
-  const today = new Date();
-
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based, so we add 1
-  const day = String(today.getDate()).padStart(2, '0');
-
-  const currentDate = `${year}-${month}-${day}`;
-
-  return currentDate;
-}
-window.onload=()=>{
-// sideBar({})
-
-const create_files=document.getElementById("add");
-const info_input=document.getElementById("inputs");
-const turn_files=document.getElementById("done");
-const link=document.getElementById("url-link");
-create_files.addEventListener('click',()=>{
-  info_input.classList.toggle("inputs");
-});
-
-turn_files.addEventListener('click',async()=>{
-  
-  const url={
-    link,
-    date:getCurrentDate()
-  };
-  try {
-    
-    const roleresponse = await fetch(
-      '',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(url),
-      }
-    );
-  
-    const role = await roleresponse.json();
-  } catch (error) {
-    console.log(error)
-  }
-})
-
-
-
-// dynamically display assignment details
-
+const urlParams = new URLSearchParams(window.location.search);
+const assignment_id = urlParams.get("assignment_id");
+const class_id = urlParams.get("class_id");
+// const user_id = localStorage.getItem('user_id');
 
 window.addEventListener("load",async()=>{
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const assignment_id = urlParams.get("assignment_id");
-  
 
   const formData = new FormData();
   formData.append('assignment_id', assignment_id);
@@ -78,3 +27,105 @@ window.addEventListener("load",async()=>{
 
 })
 
+function getCurrentDate() {
+  let currentDate = new Date();
+  const hoursDiff = currentDate.getHours() - currentDate.getTimezoneOffset() / 60;
+  const minutesDiff = (currentDate.getHours() - currentDate.getTimezoneOffset()) % 60;
+  currentDate.setHours(hoursDiff);
+  currentDate.setMinutes(minutesDiff);
+
+  return currentDate.toISOString();
+}
+
+const create_files=document.getElementById("add");
+const inputs_form=document.getElementById("inputs-form");
+const info_input=document.getElementById("inputs");
+const turn_files=document.getElementById("done");
+const link=document.getElementById("url-link");
+const submission_attachment = document.getElementById("submission_attachment");
+
+link.addEventListener("input", () => {
+  if(link.value.length > 0)
+    turn_files.innerText = "Turn in"
+  else
+    turn_files.innerText = "Mark as done"
+})
+
+
+submission_attachment.addEventListener("input", () => {
+  if(submission_attachment.files.length > 0)
+    turn_files.innerText = "Turn in"
+  else
+    turn_files.innerText = "Mark as done"
+})
+
+create_files.addEventListener('click',()=>{
+  info_input.classList.toggle("inputs");
+});
+
+
+
+inputs_form.addEventListener("submit", async (e) => {
+
+  e.preventDefault();
+
+  if(turn_files.innerText === "Turn in"){
+
+    const formData = new FormData();
+    formData.append("fileInput", submission_attachment.files[0])
+    formData.append("class_id", class_id)
+    formData.append("user_id", user_id)
+    formData.append("assignment_id", assignment_id)
+    formData.append("submission_date", getCurrentDate())
+
+    
+    try {
+      const response = await fetch(
+        'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/turnIn.php',
+        {
+          method: 'POST',
+          body: formData,
+        }
+      );
+      const responseDetails = await response.json();
+      console.log(responseDetails)
+
+      if(responseDetails['status'] = "success"){
+        turn_files.innerText = "Turned in"
+      }
+
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+  else if(turn_files.innerText === "Mark as done"){
+
+
+    const formData = new FormData();
+    formData.append("class_id", class_id)
+    formData.append("user_id", user_id)
+    formData.append("assignment_id", assignment_id)
+    formData.append("assignment_status",  "Missing")
+    formData.append("submission_date", getCurrentDate())
+    
+    try {
+      const response = await fetch(
+        'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/turnIn.php',
+        {
+          method: 'POST',
+          body: formData,
+        }
+      );
+      const responseDetails = await response.json();
+      
+      if(responseDetails['status'] = "success"){
+        turn_files.innerText = "Turned in"
+      }
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+})

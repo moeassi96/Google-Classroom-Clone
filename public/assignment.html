@@ -76,12 +76,14 @@
         </div>
         
           <button class="add" id="add">+ Add or create</button>
-          <div class="inputs" id="inputs">
-            <input type="url" placeholder="Enter a link" id="url-link">
-            <input type="file" name="submission_attachment" id="submission_attachment">
-          </div>
+          <form id="inputs-form">
+            <div class="inputs" id="inputs">
+              <input type="url" placeholder="Enter a link" id="url-link">
+              <input type="file" name="submission_attachment" id="submission_attachment">
+            </div>
+            <button type="submit" class="done" id="done">Mark as done</button>
+          </form>
       
-        <button class="done" id="done">Mark as done</button>
       </div>
       <div class="flex flex-col private-comment gap-9">
         <div> Private comments</div>

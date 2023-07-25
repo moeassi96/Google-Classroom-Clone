@@ -1,3 +1,6 @@
+const urlParams = new URLSearchParams(window.location.search);
+const class_id = urlParams.get("class_id");
+
 function displaystream(assignments) {
 	const assignmentsList = document.getElementById("streamFeed");
 	assignmentsList.innerHTML = "";
@@ -15,7 +18,7 @@ function displaystream(assignments) {
 		description = assignment.assignment_description;
 		(attachmentCaption = "Awesome"),
 			(assignmentsList.innerHTML += `<div class="stream-content-box cursor-pointer">
-    <a href='assignment.html?assignment_id=${assign_id}'>
+    <a href='assignment.html?class_id=${class_id}&assignment_id=${assign_id}'>
         <div class="stream-assignment-box flex">
             <div class="stream-assignment-icon flex items-center justify-center">
                 <img src="src/assets/images/icons/assignment-white.svg" alt="">
@@ -35,8 +38,6 @@ function displaystream(assignments) {
 }
 
 async function getClassDetails() {
-	const urlParams = new URLSearchParams(window.location.search);
-	const class_id = urlParams.get("class_id");
 
 	const response = await fetch(
 		"http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getSingleClass.php",
