@@ -24,6 +24,9 @@
 
   if(isset($_FILES["fileInput"]) && $_FILES["fileInput"]["error"] === UPLOAD_ERR_OK){
     $targetDir = "../../public/src/assets/images/submissions/";
+    if(!is_dir($targetDir)) {
+      mkdir("../../public/src/assets/images/submissions/");
+    }
     $targetFile = $targetDir . basename($_FILES["fileInput"]["name"]);
     if(move_uploaded_file($_FILES["fileInput"]["tmp_name"], $targetFile)){
       $response['file_upload']="success";
