@@ -111,7 +111,7 @@ pages.load_page = async (page) => {
 
             if (!password_regex.test(password.value)) {
               password2.nextElementSibling.innerHTML =
-                'Password should be 8 characters long, and contains atleast 1 capital, 1 small, 1 digit and 1 special character';
+                ' Password must be 8 characters long and include at least 1 uppercase letter, 1 lowercase letter, 1 digit, and 1 special character';
               return;
             } else {
               user.password = password.value;
