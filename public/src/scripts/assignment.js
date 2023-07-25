@@ -9,6 +9,9 @@ function getCurrentDate() {
 
   return currentDate;
 }
+window.onload=()=>{
+// sideBar({})
+
 const create_files=document.getElementById("add");
 const info_input=document.getElementById("inputs");
 const turn_files=document.getElementById("done");
@@ -41,3 +44,4 @@ turn_files.addEventListener('click',async()=>{
     console.log(error)
   }
 })
+}

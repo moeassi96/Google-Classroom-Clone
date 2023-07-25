@@ -76,11 +76,11 @@ function sideBar(classes) {
   });
 
   const teaching = document.getElementById("teaching");
-
+  const enrolled = document.getElementById("enrolled");
   console.log(classes);
   if (!classes.enrolled) return;
   classes.enrolled.forEach((element) => {
-    const enrolled = document.getElementById("enrolled");
+    // const enrolled = document.getElementById("enrolled");
     enrolled.innerHTML += sideBarClass(element);
   });
   if (!classes.teaching) return;

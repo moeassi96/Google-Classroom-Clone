@@ -5,7 +5,7 @@ window.addEventListener('load', async () => {
   const user = {
     user_id: user_id,
   };
-  sideBar({})
+  // sideBar({})
   const response = await fetch(
     'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/myclasses.php',
     {

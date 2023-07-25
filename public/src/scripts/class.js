@@ -70,7 +70,7 @@ window.addEventListener("load", async () => {
 	const urlParams = new URLSearchParams(window.location.search);
 	const class_id = urlParams.get("class_id");
 	const user_id = localStorage.getItem("user_id");
-	sideBar({});
+	// sideBar({});
 	getClassDetails();
 
 	const user = {
