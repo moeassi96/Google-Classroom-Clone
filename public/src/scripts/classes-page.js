@@ -1,11 +1,10 @@
 window.addEventListener('load', async () => {
-
   const user_id = localStorage.getItem('user_id');
 
   const user = {
     user_id: user_id,
   };
-  sideBar({})
+  sideBar({});
   const response = await fetch(
     'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/myclasses.php',
     {
@@ -20,13 +19,71 @@ window.addEventListener('load', async () => {
   const classes = await response.json();
 
   const cardscontainer = document.getElementById('cards-container');
+  let card_assignment = [];
 
-  for (let i = 0; i < classes.length; i++) {
-    const classid = classes[i].class_id;
-    const classname = classes[i].class_name;
-    const class_section = classes[i].class_section;
-    const class_subject = classes[i].class_subject;
+  const getCardAssignments = async (id) => {
+    let arr = [];
+    const formData = new FormData();
+    formData.append('class_id', id);
 
+    let card_assignments = [];
+    const assignment = await fetch(
+      'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/cardAssignments.php',
+      {
+        method: 'POST',
+        body: formData,
+      }
+    );
+    const res = await assignment.json();
+    res.forEach((element) => {
+      arr.push(element);
+    });
+    return arr;
+  };
+
+  for (single_class of classes) {
+    const classid = single_class.class_id;
+    const classname = single_class.class_name;
+    const class_section = single_class.class_section;
+    const class_subject = single_class.class_subject;
+    const assignments = await getCardAssignments(classid);
+    const [task1, task2] = assignments;
+
+    // Function to get the day of the week in text
+    function getDayOfWeek(dayIndex) {
+      const daysOfWeek = [
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+      ];
+      return daysOfWeek[dayIndex];
+    }
+    function getHour(date) {
+      const dateObj = new Date(date);
+      const formattedDate = `${dateObj.getHours()}:${(
+        '0' + dateObj.getMinutes()
+      ).slice(-2)} - ${getDayOfWeek(dateObj.getDay())}`;
+      return formattedDate;
+    }
+
+    const date = (task) => {
+      if (task) {
+        return getHour(task.assignment_duedate);
+      }
+      return '';
+    };
+    const description = (task) => {
+      if (task) {
+        return task.assignment_name;
+      }
+      return '';
+    };
+
+    console.log(task1);
     cardscontainer.innerHTML += `
         <li class="card-body flex flex-col">
           <div class="card-header">
@@ -56,8 +113,12 @@ window.addEventListener('load', async () => {
               alt=""
             />
             <div class="card-assignment">
-              <h3 class="card-duedate">Due wednesday</h3>
-              <p class="card-time-name">10:00 - Google Classroom-Clone</p>
+            <h3 class="card-duedate" id="">${date(task1)}</h3>
+            <p class="card-time-name mb-10px">${description(task2)}</p>
+            </div>
+            <div class="card-assignment">
+            <h3 class="card-duedate" id="">${date(task2)}</h3>
+            <p class="card-time-name"> ${description(task1)}</p>
             </div>
           </div>
           <div class="card-footer flex justify-end">
@@ -72,4 +133,6 @@ window.addEventListener('load', async () => {
         
         `;
   }
+
+  // await getCardAssignments(classes);
 });
