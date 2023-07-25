@@ -16,7 +16,29 @@ const sideBarClass = (element) => {
 };
 //Local storage, expecting: {enrolled:[{title,description}], teaching:[]}
 
-function sideBar(classes) {
+
+  // const user_id = localStorage.getItem('user_id');
+  // console.log(user_id);
+  
+
+
+ 
+async function sideBar() {
+    const user_id = 16;
+  const user = {
+    user_id: user_id,
+  };
+  const response = await fetch(
+  'http:\\localhost\Google-Classroom-Clone\api\controllers\myclasses.php',
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(user),
+  }
+  );  
+  const classes = await response.json();
   const sideBar = document.getElementById("sidebar");
   const button = document.getElementById("hamburger");
   console.log(button)
@@ -78,13 +100,22 @@ function sideBar(classes) {
   const teaching = document.getElementById("teaching");
   const enrolled = document.getElementById("enrolled");
   console.log(classes);
-  if (!classes.enrolled) return;
-  classes.enrolled.forEach((element) => {
-    // const enrolled = document.getElementById("enrolled");
-    enrolled.innerHTML += sideBarClass(element);
+  classes.forEach(element => {
+    console.log(element);
   });
-  if (!classes.teaching) return;
-  classes.teaching.forEach((element) => {
-    teaching.innerHTML += sideBarClass(element);
-  });
+  if(classes.role=="teacher"){
+    teaching.innerHTML += sideBarClass(classes.class_name);
+  };
+  if(classes.role=="student"){
+    enrolled.innerHTML += sideBarClass(classes.class_name);
+  };
+  // if (!classes.enrolled) return;
+  // classes.enrolled.forEach((element) => {
+  //   // const enrolled = document.getElementById("enrolled");
+  //   enrolled.innerHTML += sideBarClass(element);
+  // });
+  // if (!classes.teaching) return;
+  // classes.teaching.forEach((element) => {
+  //   teaching.innerHTML += sideBarClass(element);
+  // });
 }
