@@ -105,7 +105,7 @@ function displayAssignment(assignments) {
 window.addEventListener('load', async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const class_id = urlParams.get('class_id');
-  // sideBar({})
+  sideBar({});
   const response = await fetch(
     'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/getassignments.php',
     {
@@ -132,43 +132,44 @@ window.addEventListener('load', async () => {
   });
 });
 
-async function modifyPersonalLinkDiv(){
+async function modifyPersonalLinkDiv() {
   const urlParams = new URLSearchParams(window.location.search);
   const class_id = urlParams.get('class_id');
-  const user_id = localStorage.getItem("user_id")
-  
+  const user_id = localStorage.getItem('user_id');
+
   const user = {
     class_id,
-    user_id
-  }
+    user_id,
+  };
   const user_role = await fetch(
-    "http://localhost/google-clone/Google-Classroom-Clone/api/controllers/role.php",
+    'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/role.php',
     {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(user),
     }
   );
   const role = await user_role.json();
-  console.log(role.role)
+  console.log(role.role);
 
-  const PL = document.getElementById("personal-link");
-  if (role.role == "teacher"){
-    PL.innerHTML = '<div class="add-assignment flex justify-start gap-9" id="add-assignment"><label for="add-assignment-btn" class="add-assignment-btn-label" id="add-assignment-btn-label">Assign</label><button class="add-assignment-btn" id="add-assignment-btn"></button> </div>'
+  const PL = document.getElementById('personal-link');
+  if (role.role == 'teacher') {
+    PL.innerHTML =
+      '<div class="add-assignment flex justify-start gap-9" id="add-assignment"><label for="add-assignment-btn" class="add-assignment-btn-label" id="add-assignment-btn-label">Assign</label><button class="add-assignment-btn" id="add-assignment-btn"></button> </div>';
     const urlParams = new URLSearchParams(window.location.search);
     const class_id = urlParams.get('class_id');
-    const addAssign = document.getElementById("add-assignment-btn-label");
-    addAssign.addEventListener('click',() => {
+    const addAssign = document.getElementById('add-assignment-btn-label');
+    addAssign.addEventListener('click', () => {
       window.location.href = `createAssignment.html?class_id=${class_id}`;
-    })
-  }
-  else{
-    PL.innerHTML = '<img class="link-icon" src="src/assets/images/square-logo/assignment_ind.svg" alt="individual-icon" /><span class="view-work flex justify-center items-center">View your work</span>'
+    });
+  } else {
+    PL.innerHTML =
+      '<img class="link-icon" src="../src/assets/images/square-logo/assignment_ind.svg" alt="individual-icon" /><span class="view-work flex justify-center items-center">View your work</span>';
   }
 }
 
 window.onload = function () {
   modifyPersonalLinkDiv();
-  }
+};

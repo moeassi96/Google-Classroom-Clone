@@ -2,7 +2,7 @@ function signUpForm(step) {
   switch (step) {
     case 0:
       return `<div class="form-logo">
-      <img src="src/assets/images/googleLogo.svg" alt="" />
+      <img src="../src/assets/images/googleLogo.svg" alt="" />
     </div>
     <div class="form-head">
       <h2 class="form-title">Create a Google Account</h2>
@@ -32,7 +32,7 @@ function signUpForm(step) {
 
     case 1:
       return ` <div class="form-logo">
-      <img src="src/assets/images/googleLogo.svg" alt="" />
+      <img src="../src/assets/images/googleLogo.svg" alt="" />
     </div>
     <div class = "form-head">
       <h2 class = "form-title" >Basic information</h2>
@@ -58,7 +58,7 @@ function signUpForm(step) {
    `;
     case 2:
       return ` <div class="form-logo">
-      <img src="src/assets/images/googleLogo.svg" alt="" />
+      <img src="../src/assets/images/googleLogo.svg" alt="" />
     </div>
     <div class = "form-head">
       <h2 class = "form-title" >Choose your Gmail address</h2>
@@ -74,7 +74,7 @@ function signUpForm(step) {
 
     case 3:
       return ` <div class="form-logo">
-      <img src="src/assets/images/googleLogo.svg" alt="" />
+      <img src="../src/assets/images/googleLogo.svg" alt="" />
     </div>
     <div class = "form-head">
       <h2 class = "form-title" >Create a strong password</h2>
@@ -93,7 +93,7 @@ function signUpForm(step) {
 
     case 4:
       return ` <div class="form-logo">
-      <img src="src/assets/images/googleLogo.svg" alt="" />
+      <img src="../src/assets/images/googleLogo.svg" alt="" />
     </div>
     <P class="input-title">Privacy and Terms</P>
     <div class="flex flex-col">

@@ -10,7 +10,7 @@ Html,
 body {
   width: 100%;
   height: 100%;
-  font-family: "Roboto";
+  font-family: 'Roboto';
 }
 
 nav {
@@ -146,6 +146,24 @@ a {
 
 .class-subtitle {
   color: #fff;
+}
+.navbar-hamburger-button {
+  border: none;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-hamburger-button:hover {
+  background-color: rgb(247, 247, 247);
+}
+
+.navbar-hamburger-button:active {
+  background-color: rgb(218, 218, 218);
 }
 
 .class-description {
@@ -291,7 +309,7 @@ a {
 }
 
 .assignment-icon {
-  background-color: #5F6368;
+  background-color: #5f6368;
   padding: 0.5rem;
   border-radius: 50%;
 }
@@ -316,11 +334,11 @@ a {
 }
 
 .assignment-hero {
-  font-family: "Product Sans";
+  font-family: 'Product Sans';
 }
 
 .assignment-title {
-  font-family: "Product Sans";
+  font-family: 'Product Sans';
   font-weight: 400;
   color: #202124;
 }
@@ -343,32 +361,34 @@ a {
 }
 
 .status-turnin-assignment {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   border-radius: 8px;
   padding: 24px;
-  width: 252px
+  width: 252px;
 }
 
 .private-comment {
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   border-radius: 10px;
   padding: 24px;
-  width: 252px
+  width: 252px;
 }
 
 .assignment-status {
   font-size: 0.9rem;
   font-weight: 500;
-  color:  #2E7D32;
+  color: #2e7d32;
 }
 
 .add {
   height: 36px;
   background: white;
   border-radius: 3px;
-  font-family: "Product Sans";
+  font-family: 'Product Sans';
   font-weight: 500;
-  border: .0625rem solid rgb(218, 220, 224);
+  border: 0.0625rem solid rgb(218, 220, 224);
 }
 
 .add:hover {
@@ -393,7 +413,7 @@ a {
 .p-comment {
   height: 36px;
   border-radius: 25px;
-  border: .0625rem solid rgb(218, 220, 224);
+  border: 0.0625rem solid rgb(218, 220, 224);
 }
 
 .comments-hr {
@@ -406,7 +426,7 @@ a {
 
 .class-comment {
   height: 36px;
-  border: .0625rem solid rgb(218, 220, 224);
+  border: 0.0625rem solid rgb(218, 220, 224);
   border-radius: 25px;
   width: 100%;
 }
