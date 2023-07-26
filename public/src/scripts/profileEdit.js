@@ -122,7 +122,7 @@ window.addEventListener('load', async () => {
       });
 
       const pass = await pass_isValid.json();
-      console.log(pass, passwordText.innerText.toString());
+
       if (pass.status === 'Invalid Password') {
         error.textContent = 'Invalid password pattern';
         return;

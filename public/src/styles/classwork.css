@@ -1,60 +1,60 @@
 *,
 *::before,
 *::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
+body {
+  font-family: 'Product Sans', 'Noto Sans Myanmar UI', arial, sans-serif;
 }
 
 .left-container {
-	flex: 1 1 0;
-	padding-top: 3%;
-	padding-left: 4.5%;
-	padding-right: -1%;
+  flex: 1 1 0;
+  padding-top: 3%;
+  padding-left: 4.5%;
+  padding-right: -1%;
 }
 
 .mid-container {
-	flex: 3 1 0;
-	padding-top: 2%;
+  flex: 3 1 0;
+  padding-top: 2%;
 }
 
 .right-container {
-	flex: 1 1 0;
-	padding-top: 4%;
-	padding-right: 4%;
+  flex: 1 1 0;
+  padding-top: 4%;
+  padding-right: 4%;
 }
 
 .assignment-icon {
-	flex: 1 1 0;
-	text-align: left;
-	margin-left: 10px;
+  flex: 1 1 0;
+  text-align: left;
+  margin-left: 10px;
 }
 
 .assignment-name-date {
-	flex: 7 1 0;
+  flex: 7 1 0;
 }
 
 .vertical-dots-toggle {
-	flex: 1 1 0;
-	text-align: right;
-	/* color: #202124; */
+  flex: 1 1 0;
+  text-align: right;
+  /* color: #202124; */
 }
 
 .drive-icon-colored {
-	width: 50px;
-	height: 50px;
-	padding: 8px 4px;
+  width: 50px;
+  height: 50px;
+  padding: 8px 4px;
 }
 
 .view-work,
 .meet,
 .calendar,
 .drive {
-	color: #202124;
+  color: #202124;
 }
 
 .view-work,
@@ -64,175 +64,174 @@ body{
 .assignment-name,
 .assignment-description,
 .assignment-footer {
-	font-size: 14px;
-}
-
-
-.attachment-description{
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.assignment-date {
-	font-size: 12px;
-	color: #999999;
-}
-
-.attachment {
-	width: 45%;
-	border: 1px solid #dadce0;
-	border-radius: 10px;
-}
-
-.attachment-drive-icon {
-	flex: 1 1 0;
+  font-size: 14px;
 }
 
 .attachment-description {
-	flex: 2 1 0;
-	padding: 3px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.assignment-date {
+  font-size: 12px;
+  color: #999999;
+}
+
+.attachment {
+  width: 45%;
+  border: 1px solid #dadce0;
+  border-radius: 10px;
+}
+
+.attachment-drive-icon {
+  flex: 1 1 0;
+}
+
+.attachment-description {
+  flex: 2 1 0;
+  padding: 3px;
 }
 
 ul {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 .all-topics-link {
-	text-decoration: none;
-	color: #999999;
+  text-decoration: none;
+  color: #999999;
 }
 
 .all-topics-link:hover {
-	color: #202124;
+  color: #202124;
 }
 
 li {
-	padding: 10px;
-	border: 0px;
-	font-size: 13px;
-	height: 50px;
-	width: 125px;
-	display: flex;
-	align-items: center;
+  padding: 10px;
+  border: 0px;
+  font-size: 13px;
+  height: 50px;
+  width: 125px;
+  display: flex;
+  align-items: center;
 }
 
 li:hover {
-	background-color: #f5f1f1;
-	border-radius: 5px;
+  background-color: #f5f1f1;
+  border-radius: 5px;
 }
 
 .link-icon {
-	width: 18px;
-	height: 18px;
+  width: 18px;
+  height: 18px;
 }
 
 .drive-colored {
-	width: 50px;
-	height: 50px;
-	padding: 10px 30px;
-	border-right: 1px solid;
+  width: 50px;
+  height: 50px;
+  padding: 10px 30px;
+  border-right: 1px solid;
 }
 
 .icon-assignment {
-	width: 40px;
-	height: 40px;
-	padding: 5px;
-	background-color: #e6e6e6;
-	border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  background-color: #e6e6e6;
+  border-radius: 50%;
 }
 
 .assignment-title:hover {
-	background-color: #f5f1f1;
-	border-radius: 10px;
+  background-color: #f5f1f1;
+  border-radius: 10px;
 }
 
 .assignment-title {
-	height: 60px;
-	border-bottom: 1px solid #dadce0;
+  height: 60px;
+  border-bottom: 1px solid #dadce0;
 }
 
 .topics {
-	padding-top: 35px;
+  padding-top: 35px;
 }
 
 .assignment:hover {
-	border-radius: 10px;
-	border: 1px solid #dadce0;
+  border-radius: 10px;
+  border: 1px solid #dadce0;
 }
 
 .assignment-content {
-	padding: 30px 20px;
+  padding: 30px 20px;
 }
 
 .assignment-footer-container {
-	border-top: 1px solid #dadce0;
+  border-top: 1px solid #dadce0;
 }
 
 .assignment-hide {
-	display: none;
+  display: none;
 }
 
 .open-assignment {
-	display: block;
+  display: block;
 }
 
 .assignments-container {
-	padding-top: 3%;
+  padding-top: 3%;
 }
 
 *,
 *::before,
 *::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 nav {
-	height: 64px;
+  height: 64px;
 }
 
 .left-part {
-	padding-left: 16px;
+  padding-left: 16px;
 }
 
 .left-part .classroom {
-	color: var(--grey-light);
-	font-size: 1.3rem;
-	line-height: 1.7em;
+  color: var(--grey-light);
+  font-size: 1.3rem;
+  line-height: 1.7em;
 }
 
 .left-part .section {
-	font-size: 12px;
-	color: var(--grey-light);
+  font-size: 12px;
+  color: var(--grey-light);
 }
 
 .right-part {
-	padding-right: 24px;
+  padding-right: 24px;
 }
 
 .apps {
-	padding: 24px;
+  padding: 24px;
 }
 
 .nav-hr {
-	border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
 }
 
 .tab {
-	padding: 1.3rem;
-	color: var(--grey-light);
-	cursor: pointer;
+  padding: 1.3rem;
+  color: var(--grey-light);
+  cursor: pointer;
 }
 
 .tab:hover {
-	background-color: rgba(32, 33, 36, 0.039);
-	color: #202124;
+  background-color: rgba(32, 33, 36, 0.039);
+  color: #202124;
 }
 
 .active {
-	color: var(--black-dark);
-	border-bottom: 4px solid var(--black-dark);
+  color: var(--black-dark);
+  border-bottom: 4px solid var(--black-dark);
 }
 
 .add-assignment-btn-label {
@@ -255,247 +254,247 @@ nav {
   }
 
 a {
-	display: inherit;
-	text-decoration: none;
+  display: inherit;
+  text-decoration: none;
 }
 
 .sub-nav {
-	margin-left: 1.5rem;
-	margin-bottom: -0.5rem;
-	padding-top: 1rem;
-	display: block;
-	display: flex;
-	font-size: 0.875rem;
+  margin-left: 1.5rem;
+  margin-bottom: -0.5rem;
+  padding-top: 1rem;
+  display: block;
+  display: flex;
+  font-size: 0.875rem;
 }
 
 .sub-nav-content {
-	padding: 0.5rem;
-	border-radius: 10px;
+  padding: 0.5rem;
+  border-radius: 10px;
 }
 
 .sub-nav-content:hover {
-	background-color: aliceblue;
+  background-color: aliceblue;
 }
 
 .sub-nav-element {
-	height: 48px;
-	font-weight: 500;
+  height: 48px;
+  font-weight: 500;
 }
 
 .sub-nav-icons {
-	height: 20px;
-	width: 20px;
-	margin-right: 0.5rem;
+  height: 20px;
+  width: 20px;
+  margin-right: 0.5rem;
 }
 
 .cards-container {
-	flex-wrap: wrap;
-	margin-left: 1.5rem;
-	margin-top: 1.5rem;
-	width: 100%;
+  flex-wrap: wrap;
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
+  width: 100%;
 }
 
 .card-body {
-	cursor: pointer;
+  cursor: pointer;
 
-	margin-bottom: 1.5rem;
-	margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
 
-	height: 18.375rem;
-	width: 18.75rem;
-	border: 0.0625rem solid #dadce0;
-	border-radius: 0.5rem;
-	font-size: 0.8125rem;
-	line-height: 1.25rem;
+  height: 18.375rem;
+  width: 18.75rem;
+  border: 0.0625rem solid #dadce0;
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
 
-	text-align: left;
+  text-align: left;
 
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .card-header {
-	width: 100%;
-	height: 100px;
-	background-color: rgb(17, 19, 19);
+  width: 100%;
+  height: 100px;
+  background-color: rgb(17, 19, 19);
 }
 
 .card-header-content {
-	height: 100%;
-	padding: 1rem 1rem 0.75rem;
-	position: relative;
-	background-color: rgb(30, 27, 27);
+  height: 100%;
+  padding: 1rem 1rem 0.75rem;
+  position: relative;
+  background-color: rgb(30, 27, 27);
 }
 
 .class-name {
-	font-size: 1.375rem;
-	font-weight: 400;
-	line-height: 1.75rem;
-	color: #fff;
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  color: #fff;
 }
 
 .underline:hover {
-	text-decoration: underline;
-	color: #fff;
+  text-decoration: underline;
+  color: #fff;
 }
 
 .class-subtitle {
-	color: #fff;
+  color: #fff;
 }
 
 .class-description {
-	color: #fff;
+  color: #fff;
 }
 
 .class-description:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .card-middle {
-	flex-grow: 1;
-	min-height: 0;
-	padding: 1rem;
-	padding-top: 0.75rem;
+  flex-grow: 1;
+  min-height: 0;
+  padding: 1rem;
+  padding-top: 0.75rem;
 }
 
 .card-profile-img {
-	border-radius: 50%;
-	float: right;
-	height: 4.6875rem;
-	position: relative;
-	margin-top: -3.09375rem;
-	width: 4.6875rem;
+  border-radius: 50%;
+  float: right;
+  height: 4.6875rem;
+  position: relative;
+  margin-top: -3.09375rem;
+  width: 4.6875rem;
 }
 
 .card-duedate {
-	color: rgba(0, 0, 0, 0.549);
-	font-weight: 500;
-	font-size: 0.8125rem;
+  color: rgba(0, 0, 0, 0.549);
+  font-weight: 500;
+  font-size: 0.8125rem;
 }
 
 .card-icon-holder {
-	width: 3rem;
-	height: 3rem;
-	border-radius: 3rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 3rem;
 }
 
 .card-footer {
-	border-top: 0.0625rem solid rgb(218, 220, 224);
-	padding: 0.25rem;
+  border-top: 0.0625rem solid rgb(218, 220, 224);
+  padding: 0.25rem;
 }
 
 .card-icon-holder:hover {
-	background-color: rgb(243, 240, 240);
+  background-color: rgb(243, 240, 240);
 }
 
 /* sidebar */
 
 .sidebar {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: fit-content;
-	border-right: 1px solid black;
-	font: inherit;
-	padding-right: 7px;
-	font-weight: 500;
-	font-size: 14px;
-	height: 100%;
-	width: 300px;
-	/* animation: 400ms open linear alternate; */
-	transition: 400ms left;
-	background-color: white;
-	z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: fit-content;
+  border-right: 1px solid black;
+  font: inherit;
+  padding-right: 7px;
+  font-weight: 500;
+  font-size: 14px;
+  height: 100%;
+  width: 300px;
+  /* animation: 400ms open linear alternate; */
+  transition: 400ms left;
+  background-color: white;
+  z-index: 500;
 }
 
 .sidebar-section {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border-top: 0.2px solid rgba(0, 0, 0, 0.12);
-	border-bottom: 0.2px solid rgba(0, 0, 0, 0.12);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 0.2px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 0.2px solid rgba(0, 0, 0, 0.12);
 }
 .sidebar-section:last-child {
-	border-bottom: none;
+  border-bottom: none;
 }
 .sidebar-section-title {
-	padding: 0.5rem 16px;
-	color: var(--grey-light);
+  padding: 0.5rem 16px;
+  color: var(--grey-light);
 }
 
 .sidebar-item {
-	width: 300px;
-	border-radius: 0 2rem 2rem 0;
-	padding: 1.2rem 1.5rem;
+  width: 300px;
+  border-radius: 0 2rem 2rem 0;
+  padding: 1.2rem 1.5rem;
 }
 
 .sidebar-item:hover {
-	background-color: var(--hover-blue);
+  background-color: var(--hover-blue);
 }
 
 .icon {
-	width: 24px;
-	height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .todo {
-	width: 32px;
+  width: 32px;
 }
 
 .side-icon-container {
-	margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .class-icon {
-	width: 32px;
-	height: 32px;
-	background-color: green;
-	text-align: center;
-	color: white;
-	font-size: 1rem;
+  width: 32px;
+  height: 32px;
+  background-color: green;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
 }
 
 .class-title {
-	font-weight: 400;
-	color: var(--black-dark);
+  font-weight: 400;
+  color: var(--black-dark);
 }
 
 .class-details {
-	font-weight: 200;
-	font-size: 14px;
-	width: 100%;
+  font-weight: 200;
+  font-size: 14px;
+  width: 100%;
 }
 
 .class-description {
-	width: 87%;
-	font-size: 12px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+  width: 87%;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @keyframes open {
-	from {
-		left: -300px;
-	}
-	to {
-		left: 0%;
-	}
+  from {
+    left: -300px;
+  }
+  to {
+    left: 0%;
+  }
 }
 
 .navbar-hamburger-button {
-	border: none;
-	background-color: white;
-	padding: 0.5rem;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-  }
-  
-  .navbar-hamburger-button:hover {
-	background-color: rgb(247, 247, 247);
-  }
-  
-  .navbar-hamburger-button:active {
-	background-color: rgb(218, 218, 218);
-  }
+  border: none;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-hamburger-button:hover {
+  background-color: rgb(247, 247, 247);
+}
+
+.navbar-hamburger-button:active {
+  background-color: rgb(218, 218, 218);
+}

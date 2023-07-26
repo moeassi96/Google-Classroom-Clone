@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classwork</title>
+    <link rel="stylesheet" href="../src/styles/utility.css" />
+    <link rel="stylesheet" href="../src/styles/classwork.css" />
+    <link rel="stylesheet" href="../src/styles/side-bar.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="flex items-center">
+      <!-- In Class Navbar -->
+      <div class="flex items-center padding-left-lg">
+        <div>
+          <button id="hamburger" class="navbar-hamburger-button">
+            <img src="../src/assets/images/icons/menu.svg" alt="" />
+          </button>
+        </div>
+        <div class="left-part flex items-center">
+          <p>
+            FSW 23& 24 | Tech<br /><span class="section"
+              >Full Stack Web Development Bootcamp</span
+            >
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center grow justify-center gap-20">
+        <div class="tab" id="stream">Stream</div>
+        <div class="tab active" id="classwork">Classwork</div>
+        <div class="tab" id="people">People</div>
+      </div>
+      <div class="right-part flex items-center">
+        <div class="apps-account flex items-center">
+          <div class="apps">
+            <a href="#!">
+              <img src="../src/assets/images/icons/apps.svg" alt="" />
+            </a>
+          </div>
+          <div class="account">
+            <a href="profileEdit.html">
+              <img
+                class="br-50"
+                src="../src/assets/images/defaults/default-user.png"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="body-container flex">
+      <div id="close-sidebar"></div>
+      <div id="sidebar" class="sidebar flex flex-col items-center"></div>
+      <div class="left-container">
+        <div class="topics">
+          <ul class="list-of-topics flex flex-col">
+            <li class="all-topics">
+              <a href="#" class="all-topics-link">All topics</a>
+            </li>
+            <li class="all-topics">
+              <a href="#" class="all-topics-link">Full Stack</a>
+            </li>
+            <li class="all-topics">
+              <a href="#" class="all-topics-link">PHP</a>
+            </li>
+            <li class="all-topics">
+              <a href="#" class="all-topics-link">Clean Code</a>
+            </li>
+            <li class="all-topics">
+              <a href="#" class="all-topics-link">SQL</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mid-container flex flex-col">
+        <div class="links-assignments flex flex-col">
+          <div class="links flex justify-between">
+            <div class="personal-link flex justify-start gap-9">
+              <img
+                class="link-icon"
+                src="../src/assets/images/square-logo/assignment_ind.svg"
+                alt="individual-icon"
+              />
+              <span class="view-work flex justify-center items-center">
+                View your work
+              </span>
+            </div>
+
+            <div class="classes-links flex justify-end gap-10">
+              <img
+                class="link-icon"
+                src="../src/assets/images/square-logo/google-meet.svg"
+                alt="meet-icon"
+              />
+              <span class="meet flex justify-center items-center"> Meet </span>
+
+              <img
+                class="link-icon"
+                src="../src/assets/images/square-logo/calendar_today.svg"
+                alt="calendar-icon"
+              />
+              <span class="calendar flex justify-center items-center">
+                Google Calendar
+              </span>
+
+              <img
+                class="link-icon"
+                src="../src/assets/images/square-logo/google-drive.svg"
+                alt="drive-icon"
+              />
+              <span href="#" class="drive flex justify-center items-center">
+                Class Drive Folder
+              </span>
+            </div>
+          </div>
+
+          <div class="assignments-container" id="assignments-container"></div>
+        </div>
+      </div>
+      <div class="right-container"></div>
+    </main>
+    <script src="../src/components/sidebar.js"></script>
+    <script>
+      sideBar({
+        enrolled: [{ title: 'FSW', description: ' lorem epsum hjghghd' }],
+        teaching: [{ title: 'MSW', description: ' lorem epsum hjghghd' }],
+      });
+    </script>
+    <script src="../src/scripts/classwork.js"></script>
+  </body>
+</html>

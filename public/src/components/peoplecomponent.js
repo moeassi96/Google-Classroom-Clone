@@ -8,7 +8,7 @@ function displayUser(students, teachers) {
       <img src=${
         student.img
           ? student.img
-          : 'src/assets/images/defaults/default-user.png'
+          : '../src/assets/images/defaults/default-user.png'
       }>
       <div>${name}</div>
     </div>
@@ -21,7 +21,9 @@ function displayUser(students, teachers) {
     const name = `${teacher.user_firstname} ${teacher.user_lastname}`;
     teachersList.innerHTML += `<div class="teacher flex items-center">
     <img src=${
-      teacher.img ? teacher.img : 'src/assets/images/defaults/default-user.png'
+      teacher.img
+        ? teacher.img
+        : '../src/assets/images/defaults/default-user.png'
     }>
     <div>${name}</div>
   </div>

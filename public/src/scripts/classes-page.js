@@ -97,19 +97,19 @@ window.addEventListener('load', async () => {
                 </a>
                 <div>
                   <a href=""
-                    ><img src="src/assets/images/icons/dots-v white.svg" alt=""
+                    ><img src="../src/assets/images/icons/dots-v white.svg" alt=""
                   /></a>
                 </div>
               </div>
               <div class="card-sub-title">
-                <p class="class-description">${class_subject}</p>
+                <p class="class-description color-white">${class_subject}</p>
               </div>
             </div>
           </div>
           <div class="card-middle">
             <img
               class="card-profile-img"
-              src="src/assets/images/blueman.png"
+              src="../src/assets/images/blueman.png"
               alt=""
             />
             <div class="card-assignment">
@@ -123,10 +123,10 @@ window.addEventListener('load', async () => {
           </div>
           <div class="card-footer flex justify-end">
             <div class="card-icon-holder flex justify-center items-center">
-              <img src="src/assets/images/icons/assignment_ind.svg" alt="" />
+              <img src="../src/assets/images/icons/assignment_ind.svg" alt="" />
             </div>
             <div class="card-icon-holder flex justify-center items-center">
-              <img src="src/assets/images/icons/folder.svg" alt="" />
+              <img src="../src/assets/images/icons/folder.svg" alt="" />
             </div>
           </div>
         </li>
