@@ -1,70 +1,85 @@
+const user_id = localStorage.getItem('user_id')
+
 window.onload = async function () {
-  const currentDate = new Date();
-  const dueDateInput = document.getElementById('due-date');
-  const formattedCurrentDate = currentDate.toISOString().slice(0, 10); // Format the current date as YYYY-MM-DD
-  dueDateInput.setAttribute('min', formattedCurrentDate);
-  const fetchClasses = await fetch(
-    'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/myclasses.php',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(
-        { user_id: 15 } // insert user id here: const user_id = localStorage.getItem('user_id'); change below as well
-      ),
-    }
-  );
-  const classes = await fetchClasses.json();
+
+    let currentDate = new Date();
+    const dueDateInput = document.getElementById('due-date');
+    const formattedCurrentDate = currentDate.toISOString().slice(0, 10); // Format the current date as YYYY-MM-DD
+
+    
+
+    dueDateInput.setAttribute('min', formattedCurrentDate);
+    const fetchClasses = await fetch('http://localhost/google-clone/Google-Classroom-Clone/api/controllers/myClassesTeacher.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(
+            {user_id}
+        )
+    })
+    const classes = await fetchClasses.json();
 
   addClassesToClassAssignDiv(classes);
 };
 
 async function handleAssignButton() {
-  const assignment_name = document.getElementById('assignment-title').value;
-  const class_id = document.getElementById('class-assign-select').value;
-  const assignment_duedate = document.getElementById('due-date').value;
+    const assignment_name = document.getElementById('assignment-title');
+    const class_id = document.getElementById('class-assign-select');
+    let duedate = document.getElementById('due-date');
+    
+    const assignment_duedate = new Date(duedate.value).toISOString();
+    
+    let assignment_date = new Date();
+    const formatted_date = assignment_date.toISOString()
+    const assignment_description = document.getElementById('details');
+    const attachments = document.getElementById('attachments-file');
+
+    console.log("Due: ", assignment_duedate);
+    console.log("Date: ", assignment_date);
+
+    const inputs_array = [assignment_name,assignment_duedate,assignment_description]
+    
 
   document.getElementById('validation-message').innerText = '';
 
-  if (assignment_name === '') {
-    document.getElementById('validation-message').innerText =
-      '*Please enter the assignment title.';
-    return;
-  }
-
-  if (assignment_duedate === '') {
-    document.getElementById('validation-message').innerText =
-      '*Please select the due date for the assignment.';
-    return;
-  }
-
-  const assignment_date = new Date();
-  const assignment_description = document.getElementById('details').value;
-  const attachments = document.getElementById('attachments-file').files;
-
-  const assignment = {
-    assignment_name,
-    assignment_description,
-    class_id,
-    assignment_date,
-    assignment_duedate,
-    teacher_id: 15,
-    // attachments,
-  };
-
-  const postAssignment = await fetch(
-    'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/createAssignment.php',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(assignment),
+    if (assignment_name.value === '') {
+        document.getElementById('validation-message').innerText = '*Please enter the assignment title.';
+        return;
     }
-  );
 
-  const res = await postAssignment.json();
+    if (assignment_duedate.value === '') {
+        document.getElementById('validation-message').innerText = '*Please select the due date for the assignment.';
+        return;
+    }
+
+    
+
+    const assignment = {
+        assignment_name: assignment_name.value,
+        assignment_description: assignment_description.value,
+        class_id: class_id.value,
+        assignment_date: formatted_date,
+        assignment_duedate: assignment_duedate,
+        teacher_id: user_id,
+    };
+
+    console.log(assignment)
+
+    const postAssignment = await fetch('http://localhost/google-clone/Google-Classroom-Clone/api/controllers/createAssignment.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(assignment)
+    })
+    
+    const res = await postAssignment.json();
+    console.log(res.status)
+    inputs_array.forEach((e) => {
+        e.value = ""
+    })
+    
 }
 
 document
@@ -86,20 +101,3 @@ function addClassesToClassAssignDiv(classes) {
   });
 }
 
-// const classesToAdd = [8, 10, 9];
-
-// async function fetchUserClasses(user_id) {
-//     // Simulating the fetching process
-//     // Replace this with your actual logic to fetch user classes from the server or database
-//     const user_id = localStorage.getItem("user_id");
-//     const response = await fetch(
-//         'http://localhost/google-clone/Google-Classroom-Clone/api/controllers/myclasses.php',
-//         {
-//           method: 'POST',
-//           headers: {
-//             'Content-Type': 'application/json',
-//           },
-//           body: JSON.stringify({ class_id }),
-//         }
-//       );
-// }
