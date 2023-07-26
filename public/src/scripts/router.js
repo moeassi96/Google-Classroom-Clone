@@ -83,12 +83,9 @@ pages.load_page = async (page) => {
               method: 'POST',
               body: JSON.stringify({ recoveryEmail: user.email }),
             });
-            console.log('hi');
+
             const json = await res.json();
 
-            console.log('hi');
-
-            console.log(json.status);
             if (json.status === 'Email already exists') {
               gmail.nextElementSibling.innerHTML =
                 'Email already has an account';
@@ -115,15 +112,7 @@ pages.load_page = async (page) => {
               return;
             } else {
               user.password = password.value;
-              console.log(
-                user.email,
-                user.firstname,
-                user.lastname,
-                user.phone,
-                user.gender,
-                user.password,
-                user.birthdate
-              );
+
               const res = await fetch(
                 `${pages.base_url}/validatePassword.php`,
                 {
@@ -140,15 +129,6 @@ pages.load_page = async (page) => {
         }
 
         if (step === 4) {
-          console.log(
-            user.email,
-            user.firstname,
-            user.lastname,
-            user.phone,
-            user.gender,
-            user.password,
-            user.birthdate
-          );
           const toadd = {
             email: user.email,
             firstname: user.firstname,
@@ -158,7 +138,7 @@ pages.load_page = async (page) => {
             password: user.password,
             birthdate: user.birthdate,
           };
-          console.log(JSON.stringify(toadd));
+
           const res = await fetch(`${pages.base_url}signUp.php`, {
             headers: {
               'Content-Type': 'application/json',
@@ -171,7 +151,6 @@ pages.load_page = async (page) => {
           window.location.href = 'signin.html';
 
           json.status;
-          console.log;
         }
         step++;
         content.innerHTML = signUpForm(step);

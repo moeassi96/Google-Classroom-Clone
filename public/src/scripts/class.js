@@ -21,7 +21,7 @@ function displaystream(assignments) {
     <a href='assignment.html?class_id=${class_id}&assignment_id=${assign_id}'>
         <div class="stream-assignment-box flex">
             <div class="stream-assignment-icon flex items-center justify-center">
-                <img src="src/assets/images/icons/assignment-white.svg" alt="">
+                <img src="../src/assets/images/icons/assignment-white.svg" alt="">
             </div>
             <div class="stream-assignment-details">
                 <div class="stream-assignment-title">

@@ -50,6 +50,7 @@
   border-radius: 0 2rem 2rem 0;
   padding: 1.2rem 1.5rem;
   cursor: pointer;
+  color: var(--black-dark);
 }
 
 .sidebar-item:hover {
@@ -72,4 +73,8 @@
 .class-description {
   color: var(--grey-medium);
   font-weight: 400;
+}
+a {
+  text-decoration: none;
+  color: var(--black-dark);
 }

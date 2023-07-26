@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join class</title>
+    <link rel="stylesheet" href="../src/styles/signin.css" />
+    <link rel="stylesheet" href="../src/styles/utility.css" />
+  </head>
+
+  <body class="sign-in-body">
+    <div
+      class="main-container flex flex-col padding-main-container justify-center align-center border"
+    >
+      <img
+        src="../src/assets/images/googleLogo.svg"
+        alt="google"
+        class="logo justify-self-center align-self-center"
+      />
+      <div
+        class="sign-in justify-self-center align-self-center padding-top-md font-24px"
+      >
+        Join class
+      </div>
+      <div
+        id="class-name"
+        class="use-account justify-self-center align-self-center padding-top-s font-16px"
+      >
+        class1
+      </div>
+
+      <div class="create-next flex flex-col align-self-center justify-center">
+        <button id="join-class" class="next color-white font-14px">
+          Join-class
+        </button>
+        <p id="error"></p>
+      </div>
+    </div>
+  </body>
+
+  <footer class="footer">
+    <div class="lang-links flex justify-between">
+      <p class="languages padding-left-16px color-black-light font-12px">
+        English (United States)
+      </p>
+      <div class="links">
+        <a href="#" class="help padding-md color-black-light font-12px">Help</a>
+        <a href="#" class="privacy padding-md color-black-light font-12px"
+          >Privacy</a
+        >
+        <a href="#" class="terms padding-md color-black-light font-12px"
+          >Terms</a
+        >
+      </div>
+    </div>
+    <script src="../src/scripts/joinclass.js"></script>
+  </footer>
+</html>
