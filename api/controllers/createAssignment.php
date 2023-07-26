@@ -16,9 +16,9 @@ $sql = 'insert into assignments(assignment_name, assignment_description, assignm
 $stmt = $mysqli -> prepare($sql);
 $stmt -> bind_param('ssssss', $assignment_name, $assignment_description, $assignment_date, $assignment_duedate, $teacher_id, $class_id);
 if ($stmt -> execute()){
-    $response['status'] = "Assignment creation successful";
+    $response['status'] = "success";
 }else{
-    $response['status'] = "Assignment creation failed";
+    $response['status'] = "failed";
 }
 echo(json_encode($response));
 
