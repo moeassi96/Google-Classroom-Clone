@@ -12,7 +12,7 @@ $user_id = $_POST['user_id'];
 
 $to = $email;
 $subject = "Google-Classroom Invite";
-$message = "file:///C:/xampp/htdocs/google-clone/Google-Classroom-Clone/public/joinclass.html?class_id={$class_id}&user_id={$user_id}&role={$role}";
+$message = "file:///C:/xampp/htdocs/google-clone/Google-Classroom-Clone/public/views/joinclass.html?class_id={$class_id}&user_id={$user_id}&role={$role}";
 
 
 $headers = "From: <fpl19966@gmail.com>" . "\r\n";

@@ -36,7 +36,7 @@ window.addEventListener('load', () => {
 
         const json = await res.json();
 
-        window.location.href = 'signin.html';
+        window.location.href = '../signin.html';
       }
     }
   });

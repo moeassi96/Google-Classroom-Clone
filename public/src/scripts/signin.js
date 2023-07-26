@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
   const forgotPassword = document.getElementById('forgot-password');
 
   forgotPassword.addEventListener('click', () => {
-    window.location.href = 'forgetpassword1.html';
+    window.location.href = 'views/forgetpassword1.html';
   });
 
   signinbtn.addEventListener('click', () => {
@@ -36,7 +36,7 @@ window.addEventListener('load', () => {
         } else if (data.status === 'logged in') {
           localStorage.setItem('user_id', data.user_id);
 
-          window.location.href = 'classes-page.html';
+          window.location.href = 'views/classes-page.html';
         } else {
           document.getElementById('invalid-email').innerText = '';
           document.getElementById('invalid-password').innerText =
@@ -48,6 +48,6 @@ window.addEventListener('load', () => {
 
   const signupbtn = document.getElementById('sign-up-btn');
   signupbtn.addEventListener('click', () => {
-    window.location.href = 'sign-up.html';
+    window.location.href = 'views/sign-up.html';
   });
 });

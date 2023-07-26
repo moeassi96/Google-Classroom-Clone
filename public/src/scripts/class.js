@@ -61,10 +61,10 @@ function displayClassDetails(classDetails) {
   const class_google_meet_link = document.getElementById(
     'class-google-meet-link'
   );
-
+    console.log(classDetails.meeting_link)
   navbar_class_title.innerHTML = `<p>${classDetails.class_name}<br><span class="section">${classDetails.class_subject}</span></p>`;
   hero_class_title.innerHTML = `${classDetails.class_name}<br /> <span class="stream-class-section">${classDetails.class_subject}</span>`;
-  class_google_meet_link.href = classDetails.meeting_link;
+  class_google_meet_link.href = `http://${classDetails.meeting_link}`;
 }
 
 window.addEventListener('load', async () => {

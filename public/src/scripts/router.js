@@ -148,7 +148,7 @@ pages.load_page = async (page) => {
           });
           const json = await res.json();
 
-          window.location.href = 'signin.html';
+          window.location.href = '../signin.html';
 
           json.status;
         }
